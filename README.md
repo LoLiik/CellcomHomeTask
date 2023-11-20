@@ -1,5 +1,5 @@
 Authorization took much more time then i thought
-# Done (for 10 hours):
+# Done (for 8 hours):
  - network layer:
     -- separate protocols for different purposes
     
@@ -15,7 +15,7 @@ Authorization took much more time then i thought
     -- fetch image for cell (small resolution) and display in cell
     -- cancel image fetch in 'prepareForReuse'
  
-# TODO:
+# TODO (approx 5 hours):
  - movies list 
     -- alerts with errors 
     -- movies list pagination
