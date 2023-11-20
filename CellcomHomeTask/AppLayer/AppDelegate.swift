@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  CellcomHomeTask
 //
-//  Created by Евгений Кулиничев on 16.11.2023.
+//  Created by Евгений Кулиничев on 19.11.2023.
 //
 
 import UIKit
