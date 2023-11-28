@@ -19,7 +19,7 @@ Authorization took much more time then i thought
     - movies list pagination
     - cancel image fetch in 'prepareForReuse'
  
-# TODO:
+# TODO (approx 5 hours):
  - movies list 
     - alerts with errors 
     - refresh indicator during load
