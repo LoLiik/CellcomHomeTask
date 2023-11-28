@@ -8,18 +8,12 @@
 import UIKit
 import Foundation
 
-protocol MoviesListCoordinatorProtocol: AnyObject {
-    func show(_ presentedViewContoller: UIViewController)
-}
+protocol MoviesListCoordinatorProtocol: PresentingCoordinator { }
 
 final class MoviesListCoordinator {
     weak var viewController: UIViewController?
 }
 
-extension MoviesListCoordinator: MoviesListCoordinatorProtocol {
-    func show(_ viewControllerToShow: UIViewController) {
-        viewController?.present(viewControllerToShow, animated: true)
-    }
-}
+extension MoviesListCoordinator: MoviesListCoordinatorProtocol { }
 
 extension MoviesListCoordinator: UserAuthPermissionCoordinator { }

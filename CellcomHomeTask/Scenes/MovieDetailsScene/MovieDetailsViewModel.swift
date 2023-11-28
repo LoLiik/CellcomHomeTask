@@ -13,10 +13,11 @@ protocol MovieDetailsViewModelProtocol: AnyObject {
     var onMovieSet: ((Movie) -> Void)? { get set }
 }
 
-class MovieDetailsViewModel {
+final class MovieDetailsViewModel {
     private let movie: Movie
     private let movieUpdater: FavoriteMovieUpdater
     private let highResImageProvider: HighResImageProvider
+    private let router: MovieDetailsRouterProtocol
     private let updateCompletion: (Bool) -> Void
     
     private var loadingTask: DataLoadingTask?
@@ -34,11 +35,13 @@ class MovieDetailsViewModel {
         movie: Movie,
         movieUpdater: FavoriteMovieUpdater,
         highResImageProvider: HighResImageProvider,
+        router: MovieDetailsRouterProtocol,
         updateCompletion: @escaping (Bool) -> Void
     ) {
         self.movie = movie
         self.movieUpdater = movieUpdater
         self.highResImageProvider = highResImageProvider
+        self.router = router
         self.updateCompletion = updateCompletion
     }
 }
@@ -69,8 +72,14 @@ extension MovieDetailsViewModel: MovieDetailsViewModelProtocol {
     func addToFavorite() {
         loadingTask = movieUpdater.updateFavoriteMovie(movieId: movie.id, isFavorite: true) { [weak self] result in
             guard let self = self else { return }
-            self.updateCompletion(self.movieWasChanged)
-            self.onAddedToFavorite?()
+            switch result {
+            case .success:
+                self.updateCompletion(self.movieWasChanged)
+                self.onAddedToFavorite?()
+            case let .failure(error):
+                self.router.displayError(error)
+            }
+            
         }
     }
 }

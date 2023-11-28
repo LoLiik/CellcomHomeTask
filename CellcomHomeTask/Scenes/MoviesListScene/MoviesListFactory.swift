@@ -33,7 +33,13 @@ final class MoviesListFactory {
             myFavoriteMoviesProvider: myFavoriteMoviesPageWorker
         )
         
-        let router = MoviesListRouter(coordinator: coordinator, movieDetailsFactory: MovieDetailsFactory())
+        let movieDetailsFactory = MovieDetailsFactory()
+        let errorAlertFactory = ErrorAlertFactory()
+        let router = MoviesListRouter(
+            coordinator: coordinator,
+            movieDetailsFactory: movieDetailsFactory,
+            errorAlertFactory: errorAlertFactory
+        )
         
         let viewModel = MoviesListViewModel(
             moviesProvider: moviesProvider,

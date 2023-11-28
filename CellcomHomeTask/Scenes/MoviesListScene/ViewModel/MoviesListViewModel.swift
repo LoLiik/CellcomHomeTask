@@ -112,12 +112,11 @@ final class MoviesListViewModel: MoviesListViewModelProtocol {
         case .success:
             view?.updateMovies()
         case let .failure(error):
-            view?.displayError(error)
+            router.displayError(error)
         }
     }
 }
 
 protocol MoviesListView: AnyObject {
     func updateMovies()
-    func displayError(_ error: MovieFetchingError)
 }

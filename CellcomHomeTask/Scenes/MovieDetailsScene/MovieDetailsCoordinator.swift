@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol MoviesDetailsCoordinatorProtocol: AnyObject {
+protocol MoviesDetailsCoordinatorProtocol: PresentingCoordinator {
     func dissmiss()
 }
 

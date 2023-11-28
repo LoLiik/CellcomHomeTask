@@ -31,8 +31,16 @@ extension NetworkWorker {
     func fetch<T: Decodable>(url: URL, completion: @escaping (Result<T, MovieFetchingError>) -> Void) -> DataLoadingTask? {
         let request = URLRequest(url: url)
         let dataTask = URLSession.shared.dataTask(with: request) { data, response, error in
-            guard error == nil else {
-                completion(.failure(.wrongRequest))
+             guard error == nil else {
+                 switch (error as? URLError)?.code {
+                 case .some(.timedOut):
+                     completion(.failure(.timeout))
+                 case .some(.notConnectedToInternet):
+                     completion(.failure(.timeout))
+                 default:
+                     completion(.failure(.wrongRequest))
+                 }
+                
                 return
             }
             

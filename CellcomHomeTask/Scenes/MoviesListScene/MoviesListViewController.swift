@@ -92,8 +92,4 @@ extension MoviesListViewController: MoviesListView {
             self?.tableView.reloadData()
         }
     }
-    
-    func displayError(_ error: MovieFetchingError) {
-        
-    }
 }

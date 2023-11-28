@@ -22,15 +22,18 @@ class MovieDetailsFactory: MovieDetailsFactoryProtocol {
         let accountDetailsProviderWorker = AccountDetailsProviderWorker(accountDetailsProvider: networkWorker, accountUpdater: networkWorker)
         let accountDetailsAndAuthNetworkDecorator = AccountDetailsProviderNetworkDecorator(decoratee: authNetworkDecorator, accountDetailsProvider: accountDetailsProviderWorker)
         
+        let errorAlertFactory = ErrorAlertFactory()
+        let router = MovieDetailsRouter(coordinator: coordinator, errorAlertFactory: errorAlertFactory)
+        
         let viewModel = MovieDetailsViewModel(
             movie: movie,
             movieUpdater: accountDetailsAndAuthNetworkDecorator,
             highResImageProvider: networkWorker,
+            router: router,
             updateCompletion: completion
         )
         
         let viewController = MovieDetailsViewController(viewModel: viewModel)
-        viewController.view.backgroundColor = .red
         coordinator.viewController = viewController
         
         return viewController
