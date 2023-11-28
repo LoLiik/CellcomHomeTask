@@ -7,10 +7,8 @@
 
 import UIKit
 import WebKit
-
-protocol UserAuthPermissionRequestDelegate: AnyObject {
-    func didRequestUserAuthWithSuccess()
-}
+import CellcomHometaskProtocols
+import CellcomHomeTaskModels
 
 final class UserAuthPermissionWebViewController: UIViewController, WKUIDelegate {
     private var webView: WKWebView?

@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import CellcomHomeTaskModels
+import CellcomHometaskProtocols
 
 protocol MoviesListRouterProtocol: ErrorDisplayingRouter {
     func openMovieDetails(_ movie: Movie, completion: @escaping (Bool) -> Void )

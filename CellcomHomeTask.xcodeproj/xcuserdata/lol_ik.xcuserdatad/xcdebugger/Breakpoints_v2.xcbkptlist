@@ -14,8 +14,8 @@
             filePath = "CellcomHomeTask/Scenes/MovieDetailsScene/MovieDetailsViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
             landmarkName = "viewLoaded()"
             landmarkType = "7">
             <Locations>
@@ -158,10 +158,42 @@
             filePath = "CellcomHomeTask/Scenes/MoviesListScene/ViewModel/MoviesListViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "111"
-            endingLineNumber = "111"
+            startingLineNumber = "109"
+            endingLineNumber = "109"
             landmarkName = "moviesWasLoaded(_:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "57AC66A7-F203-4C3A-B57B-D9AC1A15A7CF - 9a99a0013e86e901"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CellcomHomeTask.MoviesListViewModel.moviesWasLoaded(Swift.Result&lt;(), CellcomHomeTask.MovieFetchingError&gt;) -&gt; ()"
+                  moduleName = "CellcomHomeTask"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lol_ik/Projects/CellcomHomeTask/CellcomHomeTask/Scenes/MoviesListScene/ViewModel/MoviesListViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "112"
+                  endingLineNumber = "112"
+                  offsetFromSymbolStart = "108">
+               </Location>
+               <Location
+                  uuid = "57AC66A7-F203-4C3A-B57B-D9AC1A15A7CF - 1480a7b74cb8c422"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CellcomHomeTask.MoviesListViewModel.moviesWasLoaded(Swift.Result&lt;(), CellcomHomeTaskModels.MovieFetchingError&gt;) -&gt; ()"
+                  moduleName = "CellcomHomeTask"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lol_ik/Projects/CellcomHomeTask/CellcomHomeTask/Scenes/MoviesListScene/ViewModel/MoviesListViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "110"
+                  endingLineNumber = "110"
+                  offsetFromSymbolStart = "108">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -178,6 +210,22 @@
             endingLineNumber = "66"
             landmarkName = "authenticate(decoratedAction:originalCompletion:updatableTask:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6D1DE731-27E2-44C0-9754-F63075F95D75"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CellcomHomtaskNetwork/Models+Extensions/MovieList+CodingKeys.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "13"
+            endingLineNumber = "13"
+            landmarkName = "CodingKeys"
+            landmarkType = "13">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -5,6 +5,8 @@
 //  Created by Евгений Кулиничев on 27.11.2023.
 //
 
+import CellcomHomeTaskModels
+import CellcomHometaskProtocols
 
 class MoviesPageWorker {
     typealias FetchMoviePageHandler = (Int, @escaping (Result<MovieList, MovieFetchingError>) -> Void) -> DataLoadingTask?

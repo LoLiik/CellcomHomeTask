@@ -7,6 +7,8 @@
 
 import Foundation
 import UIKit
+import CellcomHometaskProtocols
+import CellcomHomeTaskModels
 
 protocol UserAuthPermissionCoordinator: UserAuthPermissionRequestWorkerProtocol, UserAuthPermissionRequestDelegate {
     var viewController: UIViewController? { get }

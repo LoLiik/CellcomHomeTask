@@ -5,6 +5,9 @@
 //  Created by Евгений Кулиничев on 20.11.2023.
 //
 
+import CellcomHomeTaskModels
+import CellcomHometaskProtocols
+
 public protocol MoviesProvider: AnyObject {
     var movies: [Movie] { get }
     var haveMorePages: Bool { get }

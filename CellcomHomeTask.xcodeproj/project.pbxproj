@@ -12,61 +12,82 @@
 		FD18D1912B161D85003B8A46 /* MovieDetailsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD18D1902B161D85003B8A46 /* MovieDetailsRouter.swift */; };
 		FD18D1942B161E93003B8A46 /* PresentingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD18D1932B161E93003B8A46 /* PresentingCoordinator.swift */; };
 		FD18D1962B161EB0003B8A46 /* ErrorDisplayingRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD18D1952B161EB0003B8A46 /* ErrorDisplayingRouter.swift */; };
+		FD18D1C72B162656003B8A46 /* CellcomHomtaskNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD18D1BF2B162656003B8A46 /* CellcomHomtaskNetwork.framework */; };
+		FD18D1CE2B162656003B8A46 /* CellcomHomtaskNetworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD18D1CD2B162656003B8A46 /* CellcomHomtaskNetworkTests.swift */; };
+		FD18D1CF2B162656003B8A46 /* CellcomHomtaskNetwork.h in Headers */ = {isa = PBXBuildFile; fileRef = FD18D1C12B162656003B8A46 /* CellcomHomtaskNetwork.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FD18D1D22B162656003B8A46 /* CellcomHomtaskNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD18D1BF2B162656003B8A46 /* CellcomHomtaskNetwork.framework */; };
+		FD18D1D32B162656003B8A46 /* CellcomHomtaskNetwork.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FD18D1BF2B162656003B8A46 /* CellcomHomtaskNetwork.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FD18D1F02B1626A5003B8A46 /* CellcomHomeTaskModels.h in Headers */ = {isa = PBXBuildFile; fileRef = FD18D1E22B1626A5003B8A46 /* CellcomHomeTaskModels.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FD18D1F32B1626A5003B8A46 /* CellcomHomeTaskModels.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD18D1E02B1626A4003B8A46 /* CellcomHomeTaskModels.framework */; };
+		FD18D1F42B1626A5003B8A46 /* CellcomHomeTaskModels.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FD18D1E02B1626A4003B8A46 /* CellcomHomeTaskModels.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FD18D1FC2B1626C0003B8A46 /* CellcomHomeTaskModels.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD18D1E02B1626A4003B8A46 /* CellcomHomeTaskModels.framework */; };
+		FD18D1FD2B1626C0003B8A46 /* CellcomHomeTaskModels.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FD18D1E02B1626A4003B8A46 /* CellcomHomeTaskModels.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FD18D2012B1626EC003B8A46 /* NetworkWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3B38DF2B061E1300BBCF03 /* NetworkWorker.swift */; };
+		FD18D2022B162719003B8A46 /* NetworkWorker+HighResImageProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD94FAAF2B0B83D2002A820F /* NetworkWorker+HighResImageProvider.swift */; };
+		FD18D2032B162719003B8A46 /* NetworkWorker+CurrentlyBroadcastMoviesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3B38FB2B06361500BBCF03 /* NetworkWorker+CurrentlyBroadcastMoviesProvider.swift */; };
+		FD18D2042B162719003B8A46 /* NetworkWorker+MyFavoritesMoviesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3B38F92B0635FC00BBCF03 /* NetworkWorker+MyFavoritesMoviesProvider.swift */; };
+		FD18D2052B162719003B8A46 /* NetworkWorker+FavoriteMovieUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3B393F2B0A663000BBCF03 /* NetworkWorker+FavoriteMovieUpdater.swift */; };
+		FD18D2062B162719003B8A46 /* NetworkWorker+LowResImageProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD94FAAD2B0B839D002A820F /* NetworkWorker+LowResImageProvider.swift */; };
+		FD18D2072B162719003B8A46 /* NetworkWorker+PopularMoviesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3B38F72B0635BD00BBCF03 /* NetworkWorker+PopularMoviesProvider.swift */; };
+		FD18D2092B162720003B8A46 /* NetworkWorker+GuestSessionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3B391F2B076D4700BBCF03 /* NetworkWorker+GuestSessionProvider.swift */; };
+		FD18D20A2B162720003B8A46 /* NetworkWorker+AccountUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3B39312B0A3F9800BBCF03 /* NetworkWorker+AccountUpdater.swift */; };
+		FD18D20B2B162720003B8A46 /* NetworkWorker+RequestTokenProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3B39182B076B7500BBCF03 /* NetworkWorker+RequestTokenProvider.swift */; };
+		FD18D20C2B162720003B8A46 /* NetworkWorker+SessionUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3B39282B09F83600BBCF03 /* NetworkWorker+SessionUpdater.swift */; };
+		FD18D20D2B162720003B8A46 /* NetworkWorker+AccountDetailsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3B39032B06452300BBCF03 /* NetworkWorker+AccountDetailsProvider.swift */; };
+		FD18D20E2B162720003B8A46 /* NetworkWorker+SessionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3B39162B076B5700BBCF03 /* NetworkWorker+SessionProvider.swift */; };
+		FD18D2242B16276E003B8A46 /* CellcomHometaskProtocols.h in Headers */ = {isa = PBXBuildFile; fileRef = FD18D2162B16276E003B8A46 /* CellcomHometaskProtocols.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FD18D2272B16276E003B8A46 /* CellcomHometaskProtocols.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD18D2142B16276E003B8A46 /* CellcomHometaskProtocols.framework */; };
+		FD18D2282B16276E003B8A46 /* CellcomHometaskProtocols.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FD18D2142B16276E003B8A46 /* CellcomHometaskProtocols.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FD18D22F2B16279A003B8A46 /* CellcomHometaskProtocols.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD18D2142B16276E003B8A46 /* CellcomHometaskProtocols.framework */; };
+		FD18D2302B16279A003B8A46 /* CellcomHometaskProtocols.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FD18D2142B16276E003B8A46 /* CellcomHometaskProtocols.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FD18D23B2B1628D7003B8A46 /* MovieFetchingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3B38F52B06356F00BBCF03 /* MovieFetchingError.swift */; };
+		FD18D23C2B1628D7003B8A46 /* MovieList.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3B38E62B0632C500BBCF03 /* MovieList.swift */; };
+		FD18D23D2B1628D7003B8A46 /* ErrorData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3B39372B0A4AA900BBCF03 /* ErrorData.swift */; };
+		FD18D23E2B1628D7003B8A46 /* FavoriteMovie.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3B39412B0A680500BBCF03 /* FavoriteMovie.swift */; };
+		FD18D23F2B1628D7003B8A46 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3B38E42B0632BC00BBCF03 /* Movie.swift */; };
+		FD18D2442B1628DE003B8A46 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3B38FD2B063D2400BBCF03 /* Account.swift */; };
+		FD18D2452B1628DE003B8A46 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3B38FF2B06442100BBCF03 /* Session.swift */; };
+		FD18D2462B1628DE003B8A46 /* RequestToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3B39052B06496700BBCF03 /* RequestToken.swift */; };
+		FD18D2472B1628DE003B8A46 /* GuestSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3B39212B076D6500BBCF03 /* GuestSession.swift */; };
+		FD18D2482B1628E1003B8A46 /* TMDBResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3B39352B0A4A0F00BBCF03 /* TMDBResponse.swift */; };
+		FD18D2512B162901003B8A46 /* PopularMoviePagesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3B38EF2B0634E000BBCF03 /* PopularMoviePagesProvider.swift */; };
+		FD18D2522B162901003B8A46 /* LowResImageProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD94FAAB2B0B8302002A820F /* LowResImageProvider.swift */; };
+		FD18D2532B162901003B8A46 /* FavoriteMovieUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3B39392B0A4BFE00BBCF03 /* FavoriteMovieUpdater.swift */; };
+		FD18D2542B162901003B8A46 /* CurrentlyBroadcastMoviePagesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3B38F32B06351700BBCF03 /* CurrentlyBroadcastMoviePagesProvider.swift */; };
+		FD18D2552B162901003B8A46 /* HighResImageProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD94FAA92B0B82EF002A820F /* HighResImageProvider.swift */; };
+		FD18D2562B162901003B8A46 /* DataLoadingTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD18D2332B1627F5003B8A46 /* DataLoadingTask.swift */; };
+		FD18D2572B162901003B8A46 /* MyFavoriteMoviePagesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3B38F12B0634F800BBCF03 /* MyFavoriteMoviePagesProvider.swift */; };
+		FD18D25F2B162907003B8A46 /* AccountDetailsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3B39012B0644FE00BBCF03 /* AccountDetailsProvider.swift */; };
+		FD18D2602B162907003B8A46 /* SessionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3B39132B076B3400BBCF03 /* SessionProvider.swift */; };
+		FD18D2612B162907003B8A46 /* GuestSessionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3B391D2B076D1600BBCF03 /* GuestSessionProvider.swift */; };
+		FD18D2622B162907003B8A46 /* RequestTokenProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3B39112B076B1D00BBCF03 /* RequestTokenProvider.swift */; };
+		FD18D2632B162907003B8A46 /* SessionUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3B392D2B0A1B1000BBCF03 /* SessionUpdater.swift */; };
+		FD18D2642B162907003B8A46 /* AuthProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3B391B2B076B9E00BBCF03 /* AuthProvider.swift */; };
+		FD18D2652B162907003B8A46 /* AccountUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3B392F2B0A3EF900BBCF03 /* AccountUpdater.swift */; };
+		FD18D2662B162A2D003B8A46 /* CellcomHomeTaskModels.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD18D1E02B1626A4003B8A46 /* CellcomHomeTaskModels.framework */; };
+		FD18D2672B162A2D003B8A46 /* CellcomHomeTaskModels.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FD18D1E02B1626A4003B8A46 /* CellcomHomeTaskModels.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FD18D2782B162A8A003B8A46 /* AuthWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3B390A2B07680E00BBCF03 /* AuthWorker.swift */; };
+		FD18D2792B162A8A003B8A46 /* AuthenticationNetworkDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3B392A2B0A03F100BBCF03 /* AuthenticationNetworkDecorator.swift */; };
+		FD18D27B2B162DB4003B8A46 /* UserAuthPermissionRequestWorkerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD18D27A2B162DB4003B8A46 /* UserAuthPermissionRequestWorkerProtocol.swift */; };
+		FD18D27D2B162E62003B8A46 /* UserAuthPermissionRequestDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD18D27C2B162E62003B8A46 /* UserAuthPermissionRequestDelegate.swift */; };
+		FD18D27E2B162EA7003B8A46 /* AccountDetailsProviderNetworkDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3B393B2B0A4E2400BBCF03 /* AccountDetailsProviderNetworkDecorator.swift */; };
+		FD18D27F2B162EAE003B8A46 /* AccountDetailsProviderWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3B393D2B0A4E5900BBCF03 /* AccountDetailsProviderWorker.swift */; };
+		FD18D2802B1635E5003B8A46 /* MovieList+CodingKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3B38E92B06332100BBCF03 /* MovieList+CodingKeys.swift */; };
+		FD18D2812B1635E5003B8A46 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3B39332B0A49F400BBCF03 /* String+Extensions.swift */; };
+		FD18D2822B1635E5003B8A46 /* FavoriteMovie+CodingKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3B39432B0A684E00BBCF03 /* FavoriteMovie+CodingKeys.swift */; };
+		FD18D2832B1635E5003B8A46 /* Movie+CodingKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3B38EB2B06334000BBCF03 /* Movie+CodingKeys.swift */; };
+		FD18D2842B1635EB003B8A46 /* RequestToken+CodingKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3B39262B09777900BBCF03 /* RequestToken+CodingKeys.swift */; };
+		FD18D2852B1635EB003B8A46 /* Session+CodingKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3B39242B09775600BBCF03 /* Session+CodingKeys.swift */; };
+		FD18D2872B163662003B8A46 /* URLSessionDataTask+URLSessionDataTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD18D2862B163662003B8A46 /* URLSessionDataTask+URLSessionDataTask.swift */; };
 		FD3B38C62B06195900BBCF03 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3B38C52B06195900BBCF03 /* AppDelegate.swift */; };
 		FD3B38C82B06195900BBCF03 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3B38C72B06195900BBCF03 /* SceneDelegate.swift */; };
 		FD3B38CF2B06195C00BBCF03 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD3B38CE2B06195C00BBCF03 /* Assets.xcassets */; };
 		FD3B38D22B06195C00BBCF03 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD3B38D02B06195C00BBCF03 /* LaunchScreen.storyboard */; };
-		FD3B38E02B061E1300BBCF03 /* NetworkWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3B38DF2B061E1300BBCF03 /* NetworkWorker.swift */; };
 		FD3B38E22B06239100BBCF03 /* MoviesListFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3B38E12B06239100BBCF03 /* MoviesListFactory.swift */; };
-		FD3B38E52B0632BC00BBCF03 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3B38E42B0632BC00BBCF03 /* Movie.swift */; };
-		FD3B38E72B0632C500BBCF03 /* MovieList.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3B38E62B0632C500BBCF03 /* MovieList.swift */; };
-		FD3B38EA2B06332100BBCF03 /* MovieList+CodingKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3B38E92B06332100BBCF03 /* MovieList+CodingKeys.swift */; };
-		FD3B38EC2B06334000BBCF03 /* Movie+CodingKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3B38EB2B06334000BBCF03 /* Movie+CodingKeys.swift */; };
-		FD3B38F02B0634E000BBCF03 /* PopularMoviePagesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3B38EF2B0634E000BBCF03 /* PopularMoviePagesProvider.swift */; };
-		FD3B38F22B0634F800BBCF03 /* MyFavoriteMoviePagesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3B38F12B0634F800BBCF03 /* MyFavoriteMoviePagesProvider.swift */; };
-		FD3B38F42B06351700BBCF03 /* CurrentlyBroadcastMoviePagesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3B38F32B06351700BBCF03 /* CurrentlyBroadcastMoviePagesProvider.swift */; };
-		FD3B38F62B06356F00BBCF03 /* MovieFetchingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3B38F52B06356F00BBCF03 /* MovieFetchingError.swift */; };
-		FD3B38F82B0635BD00BBCF03 /* NetworkWorker+PopularMoviesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3B38F72B0635BD00BBCF03 /* NetworkWorker+PopularMoviesProvider.swift */; };
-		FD3B38FA2B0635FC00BBCF03 /* NetworkWorker+MyFavoritesMoviesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3B38F92B0635FC00BBCF03 /* NetworkWorker+MyFavoritesMoviesProvider.swift */; };
-		FD3B38FC2B06361500BBCF03 /* NetworkWorker+CurrentlyBroadcastMoviesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3B38FB2B06361500BBCF03 /* NetworkWorker+CurrentlyBroadcastMoviesProvider.swift */; };
-		FD3B38FE2B063D2400BBCF03 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3B38FD2B063D2400BBCF03 /* Account.swift */; };
-		FD3B39002B06442100BBCF03 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3B38FF2B06442100BBCF03 /* Session.swift */; };
-		FD3B39022B0644FE00BBCF03 /* AccountDetailsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3B39012B0644FE00BBCF03 /* AccountDetailsProvider.swift */; };
-		FD3B39042B06452300BBCF03 /* NetworkWorker+AccountDetailsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3B39032B06452300BBCF03 /* NetworkWorker+AccountDetailsProvider.swift */; };
-		FD3B39062B06496700BBCF03 /* RequestToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3B39052B06496700BBCF03 /* RequestToken.swift */; };
-		FD3B390B2B07680E00BBCF03 /* AuthWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3B390A2B07680E00BBCF03 /* AuthWorker.swift */; };
 		FD3B390E2B07689800BBCF03 /* UserAuthPermissionWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3B390D2B07689800BBCF03 /* UserAuthPermissionWebViewController.swift */; };
-		FD3B39122B076B1D00BBCF03 /* RequestTokenProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3B39112B076B1D00BBCF03 /* RequestTokenProvider.swift */; };
-		FD3B39142B076B3400BBCF03 /* SessionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3B39132B076B3400BBCF03 /* SessionProvider.swift */; };
-		FD3B39172B076B5700BBCF03 /* NetworkWorker+SessionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3B39162B076B5700BBCF03 /* NetworkWorker+SessionProvider.swift */; };
-		FD3B39192B076B7500BBCF03 /* NetworkWorker+RequestTokenProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3B39182B076B7500BBCF03 /* NetworkWorker+RequestTokenProvider.swift */; };
-		FD3B391C2B076B9E00BBCF03 /* AuthProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3B391B2B076B9E00BBCF03 /* AuthProvider.swift */; };
-		FD3B391E2B076D1600BBCF03 /* GuestSessionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3B391D2B076D1600BBCF03 /* GuestSessionProvider.swift */; };
-		FD3B39202B076D4700BBCF03 /* NetworkWorker+GuestSessionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3B391F2B076D4700BBCF03 /* NetworkWorker+GuestSessionProvider.swift */; };
-		FD3B39222B076D6500BBCF03 /* GuestSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3B39212B076D6500BBCF03 /* GuestSession.swift */; };
-		FD3B39252B09775700BBCF03 /* Session+CodingKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3B39242B09775600BBCF03 /* Session+CodingKeys.swift */; };
-		FD3B39272B09777900BBCF03 /* RequestToken+CodingKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3B39262B09777900BBCF03 /* RequestToken+CodingKeys.swift */; };
-		FD3B39292B09F83600BBCF03 /* NetworkWorker+SessionUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3B39282B09F83600BBCF03 /* NetworkWorker+SessionUpdater.swift */; };
-		FD3B392B2B0A03F100BBCF03 /* AuthenticationNetworkDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3B392A2B0A03F100BBCF03 /* AuthenticationNetworkDecorator.swift */; };
-		FD3B392E2B0A1B1000BBCF03 /* SessionUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3B392D2B0A1B1000BBCF03 /* SessionUpdater.swift */; };
-		FD3B39302B0A3EF900BBCF03 /* AccountUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3B392F2B0A3EF900BBCF03 /* AccountUpdater.swift */; };
-		FD3B39322B0A3F9800BBCF03 /* NetworkWorker+AccountUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3B39312B0A3F9800BBCF03 /* NetworkWorker+AccountUpdater.swift */; };
-		FD3B39342B0A49F400BBCF03 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3B39332B0A49F400BBCF03 /* String+Extensions.swift */; };
-		FD3B39362B0A4A0F00BBCF03 /* TMDBResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3B39352B0A4A0F00BBCF03 /* TMDBResponse.swift */; };
-		FD3B39382B0A4AA900BBCF03 /* ErrorData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3B39372B0A4AA900BBCF03 /* ErrorData.swift */; };
-		FD3B393A2B0A4BFE00BBCF03 /* FavoriteMovieUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3B39392B0A4BFE00BBCF03 /* FavoriteMovieUpdater.swift */; };
-		FD3B393C2B0A4E2400BBCF03 /* AccountDetailsProviderNetworkDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3B393B2B0A4E2400BBCF03 /* AccountDetailsProviderNetworkDecorator.swift */; };
-		FD3B393E2B0A4E5900BBCF03 /* AccountDetailsProviderWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3B393D2B0A4E5900BBCF03 /* AccountDetailsProviderWorker.swift */; };
-		FD3B39402B0A663000BBCF03 /* NetworkWorker+FavoriteMovieUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3B393F2B0A663000BBCF03 /* NetworkWorker+FavoriteMovieUpdater.swift */; };
-		FD3B39422B0A680500BBCF03 /* FavoriteMovie.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3B39412B0A680500BBCF03 /* FavoriteMovie.swift */; };
-		FD3B39442B0A684E00BBCF03 /* FavoriteMovie+CodingKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3B39432B0A684E00BBCF03 /* FavoriteMovie+CodingKeys.swift */; };
 		FD3B39462B0A6C3800BBCF03 /* MoviesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3B39452B0A6C3800BBCF03 /* MoviesListViewModel.swift */; };
 		FD3B39482B0A6C5400BBCF03 /* MoviesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3B39472B0A6C5400BBCF03 /* MoviesListViewController.swift */; };
 		FD3B394A2B0A6C7C00BBCF03 /* MoviesListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3B39492B0A6C7C00BBCF03 /* MoviesListCoordinator.swift */; };
-		FD94FAAA2B0B82EF002A820F /* HighResImageProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD94FAA92B0B82EF002A820F /* HighResImageProvider.swift */; };
-		FD94FAAC2B0B8302002A820F /* LowResImageProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD94FAAB2B0B8302002A820F /* LowResImageProvider.swift */; };
-		FD94FAAE2B0B839D002A820F /* NetworkWorker+LowResImageProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD94FAAD2B0B839D002A820F /* NetworkWorker+LowResImageProvider.swift */; };
-		FD94FAB02B0B83D2002A820F /* NetworkWorker+HighResImageProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD94FAAF2B0B83D2002A820F /* NetworkWorker+HighResImageProvider.swift */; };
 		FD94FAB22B0B8466002A820F /* MoviesProviderFacade.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD94FAB12B0B8466002A820F /* MoviesProviderFacade.swift */; };
 		FD94FAB42B0B997D002A820F /* MovieListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD94FAB32B0B997D002A820F /* MovieListCell.swift */; };
 		FD94FAB62B0B9E17002A820F /* MovieListCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD94FAB52B0B9E17002A820F /* MovieListCellViewModel.swift */; };
@@ -79,12 +100,122 @@
 		FDF840232B15C14B00FC2D9C /* UserAuthPermissionCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF840222B15C14B00FC2D9C /* UserAuthPermissionCoordinator.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		FD18D1C82B162656003B8A46 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FD3B38BA2B06195900BBCF03 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FD18D1BE2B162656003B8A46;
+			remoteInfo = CellcomHomtaskNetwork;
+		};
+		FD18D1CA2B162656003B8A46 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FD3B38BA2B06195900BBCF03 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FD3B38C12B06195900BBCF03;
+			remoteInfo = CellcomHomeTask;
+		};
+		FD18D1D02B162656003B8A46 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FD3B38BA2B06195900BBCF03 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FD18D1BE2B162656003B8A46;
+			remoteInfo = CellcomHomtaskNetwork;
+		};
+		FD18D1F12B1626A5003B8A46 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FD3B38BA2B06195900BBCF03 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FD18D1DF2B1626A4003B8A46;
+			remoteInfo = CellcomHomeTaskModels;
+		};
+		FD18D1FE2B1626C0003B8A46 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FD3B38BA2B06195900BBCF03 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FD18D1DF2B1626A4003B8A46;
+			remoteInfo = CellcomHomeTaskModels;
+		};
+		FD18D2252B16276E003B8A46 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FD3B38BA2B06195900BBCF03 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FD18D2132B16276E003B8A46;
+			remoteInfo = CellcomHometaskProtocols;
+		};
+		FD18D2312B16279A003B8A46 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FD3B38BA2B06195900BBCF03 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FD18D2132B16276E003B8A46;
+			remoteInfo = CellcomHometaskProtocols;
+		};
+		FD18D2682B162A2D003B8A46 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FD3B38BA2B06195900BBCF03 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FD18D1DF2B1626A4003B8A46;
+			remoteInfo = CellcomHomeTaskModels;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		FD18D1B42B16261D003B8A46 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				FD18D1F42B1626A5003B8A46 /* CellcomHomeTaskModels.framework in Embed Frameworks */,
+				FD18D1D32B162656003B8A46 /* CellcomHomtaskNetwork.framework in Embed Frameworks */,
+				FD18D2282B16276E003B8A46 /* CellcomHometaskProtocols.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD18D2002B1626C0003B8A46 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				FD18D2302B16279A003B8A46 /* CellcomHometaskProtocols.framework in Embed Frameworks */,
+				FD18D1FD2B1626C0003B8A46 /* CellcomHomeTaskModels.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD18D26A2B162A2E003B8A46 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				FD18D2672B162A2D003B8A46 /* CellcomHomeTaskModels.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		FD18D18C2B161C11003B8A46 /* ErrorAlertFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorAlertFactory.swift; sourceTree = "<group>"; };
 		FD18D18E2B161C5F003B8A46 /* MovieDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsView.swift; sourceTree = "<group>"; };
 		FD18D1902B161D85003B8A46 /* MovieDetailsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsRouter.swift; sourceTree = "<group>"; };
 		FD18D1932B161E93003B8A46 /* PresentingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentingCoordinator.swift; sourceTree = "<group>"; };
 		FD18D1952B161EB0003B8A46 /* ErrorDisplayingRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorDisplayingRouter.swift; sourceTree = "<group>"; };
+		FD18D1BF2B162656003B8A46 /* CellcomHomtaskNetwork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CellcomHomtaskNetwork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD18D1C12B162656003B8A46 /* CellcomHomtaskNetwork.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CellcomHomtaskNetwork.h; sourceTree = "<group>"; };
+		FD18D1C62B162656003B8A46 /* CellcomHomtaskNetworkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CellcomHomtaskNetworkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD18D1CD2B162656003B8A46 /* CellcomHomtaskNetworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellcomHomtaskNetworkTests.swift; sourceTree = "<group>"; };
+		FD18D1E02B1626A4003B8A46 /* CellcomHomeTaskModels.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CellcomHomeTaskModels.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD18D1E22B1626A5003B8A46 /* CellcomHomeTaskModels.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CellcomHomeTaskModels.h; sourceTree = "<group>"; };
+		FD18D2142B16276E003B8A46 /* CellcomHometaskProtocols.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CellcomHometaskProtocols.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD18D2162B16276E003B8A46 /* CellcomHometaskProtocols.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CellcomHometaskProtocols.h; sourceTree = "<group>"; };
+		FD18D2332B1627F5003B8A46 /* DataLoadingTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataLoadingTask.swift; sourceTree = "<group>"; };
+		FD18D27A2B162DB4003B8A46 /* UserAuthPermissionRequestWorkerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAuthPermissionRequestWorkerProtocol.swift; sourceTree = "<group>"; };
+		FD18D27C2B162E62003B8A46 /* UserAuthPermissionRequestDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAuthPermissionRequestDelegate.swift; sourceTree = "<group>"; };
+		FD18D2862B163662003B8A46 /* URLSessionDataTask+URLSessionDataTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSessionDataTask+URLSessionDataTask.swift"; sourceTree = "<group>"; };
 		FD3B38C22B06195900BBCF03 /* CellcomHomeTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CellcomHomeTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD3B38C52B06195900BBCF03 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FD3B38C72B06195900BBCF03 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -156,10 +287,45 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		FD18D1BC2B162656003B8A46 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD18D22F2B16279A003B8A46 /* CellcomHometaskProtocols.framework in Frameworks */,
+				FD18D1FC2B1626C0003B8A46 /* CellcomHomeTaskModels.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD18D1C32B162656003B8A46 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD18D1C72B162656003B8A46 /* CellcomHomtaskNetwork.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD18D1DD2B1626A4003B8A46 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD18D2112B16276E003B8A46 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD18D2662B162A2D003B8A46 /* CellcomHomeTaskModels.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FD3B38BF2B06195900BBCF03 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD18D1F32B1626A5003B8A46 /* CellcomHomeTaskModels.framework in Frameworks */,
+				FD18D1D22B162656003B8A46 /* CellcomHomtaskNetwork.framework in Frameworks */,
+				FD18D2272B16276E003B8A46 /* CellcomHometaskProtocols.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -185,12 +351,64 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		FD18D1C02B162656003B8A46 /* CellcomHomtaskNetwork */ = {
+			isa = PBXGroup;
+			children = (
+				FD3B38DF2B061E1300BBCF03 /* NetworkWorker.swift */,
+				FD18D2862B163662003B8A46 /* URLSessionDataTask+URLSessionDataTask.swift */,
+				FDF840152B14B96100FC2D9C /* Auth */,
+				FDF840162B14B98200FC2D9C /* AccountDetails */,
+				FD3B38EE2B0634CF00BBCF03 /* NetworkWorker+Extensions */,
+				FD18D1C12B162656003B8A46 /* CellcomHomtaskNetwork.h */,
+			);
+			path = CellcomHomtaskNetwork;
+			sourceTree = "<group>";
+		};
+		FD18D1CC2B162656003B8A46 /* CellcomHomtaskNetworkTests */ = {
+			isa = PBXGroup;
+			children = (
+				FD18D1CD2B162656003B8A46 /* CellcomHomtaskNetworkTests.swift */,
+			);
+			path = CellcomHomtaskNetworkTests;
+			sourceTree = "<group>";
+		};
+		FD18D1E12B1626A5003B8A46 /* CellcomHomeTaskModels */ = {
+			isa = PBXGroup;
+			children = (
+				FD3B38E82B0632FB00BBCF03 /* Models+Extensions */,
+				FD3B38E32B0632B400BBCF03 /* Models */,
+				FD18D1E22B1626A5003B8A46 /* CellcomHomeTaskModels.h */,
+			);
+			path = CellcomHomeTaskModels;
+			sourceTree = "<group>";
+		};
+		FD18D1FB2B1626C0003B8A46 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FD18D2152B16276E003B8A46 /* CellcomHometaskProtocols */ = {
+			isa = PBXGroup;
+			children = (
+				FD3B38ED2B0634C900BBCF03 /* Protocols */,
+				FD18D2162B16276E003B8A46 /* CellcomHometaskProtocols.h */,
+			);
+			path = CellcomHometaskProtocols;
+			sourceTree = "<group>";
+		};
 		FD3B38B92B06195900BBCF03 = {
 			isa = PBXGroup;
 			children = (
 				FD3B38DE2B061DBE00BBCF03 /* README.md */,
 				FD3B38C42B06195900BBCF03 /* CellcomHomeTask */,
+				FD18D1C02B162656003B8A46 /* CellcomHomtaskNetwork */,
+				FD18D1CC2B162656003B8A46 /* CellcomHomtaskNetworkTests */,
+				FD18D1E12B1626A5003B8A46 /* CellcomHomeTaskModels */,
+				FD18D2152B16276E003B8A46 /* CellcomHometaskProtocols */,
 				FD3B38C32B06195900BBCF03 /* Products */,
+				FD18D1FB2B1626C0003B8A46 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -198,6 +416,10 @@
 			isa = PBXGroup;
 			children = (
 				FD3B38C22B06195900BBCF03 /* CellcomHomeTask.app */,
+				FD18D1BF2B162656003B8A46 /* CellcomHomtaskNetwork.framework */,
+				FD18D1C62B162656003B8A46 /* CellcomHomtaskNetworkTests.xctest */,
+				FD18D1E02B1626A4003B8A46 /* CellcomHomeTaskModels.framework */,
+				FD18D2142B16276E003B8A46 /* CellcomHometaskProtocols.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -207,10 +429,7 @@
 			children = (
 				FD3B38D92B061C5D00BBCF03 /* AppLayer */,
 				FD18D1922B161E3F003B8A46 /* Helpers */,
-				FD3B38ED2B0634C900BBCF03 /* Protocols */,
-				FD3B38E32B0632B400BBCF03 /* Models */,
 				FD3B38DB2B061C7B00BBCF03 /* Scenes */,
-				FD3B38DA2B061C6800BBCF03 /* NetworkLayer */,
 			);
 			path = CellcomHomeTask;
 			sourceTree = "<group>";
@@ -225,19 +444,6 @@
 				FD3B38D32B06195C00BBCF03 /* Info.plist */,
 			);
 			path = AppLayer;
-			sourceTree = "<group>";
-		};
-		FD3B38DA2B061C6800BBCF03 /* NetworkLayer */ = {
-			isa = PBXGroup;
-			children = (
-				FD3B38DF2B061E1300BBCF03 /* NetworkWorker.swift */,
-				FD3B39352B0A4A0F00BBCF03 /* TMDBResponse.swift */,
-				FD3B38EE2B0634CF00BBCF03 /* NetworkWorker+Extensions */,
-				FD3B38E82B0632FB00BBCF03 /* Models+Extensions */,
-				FDF840152B14B96100FC2D9C /* Auth */,
-				FDF840162B14B98200FC2D9C /* AccountDetails */,
-			);
-			path = NetworkLayer;
 			sourceTree = "<group>";
 		};
 		FD3B38DB2B061C7B00BBCF03 /* Scenes */ = {
@@ -265,6 +471,7 @@
 		FD3B38E32B0632B400BBCF03 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				FD3B39352B0A4A0F00BBCF03 /* TMDBResponse.swift */,
 				FD3B39072B0649A100BBCF03 /* Auth */,
 				FD3B38E42B0632BC00BBCF03 /* Movie.swift */,
 				FD3B38E62B0632C500BBCF03 /* MovieList.swift */,
@@ -297,6 +504,7 @@
 				FD3B38F32B06351700BBCF03 /* CurrentlyBroadcastMoviePagesProvider.swift */,
 				FD94FAAB2B0B8302002A820F /* LowResImageProvider.swift */,
 				FD94FAA92B0B82EF002A820F /* HighResImageProvider.swift */,
+				FD18D2332B1627F5003B8A46 /* DataLoadingTask.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -345,6 +553,8 @@
 				FD3B392D2B0A1B1000BBCF03 /* SessionUpdater.swift */,
 				FD3B39012B0644FE00BBCF03 /* AccountDetailsProvider.swift */,
 				FD3B392F2B0A3EF900BBCF03 /* AccountUpdater.swift */,
+				FD18D27A2B162DB4003B8A46 /* UserAuthPermissionRequestWorkerProtocol.swift */,
+				FD18D27C2B162E62003B8A46 /* UserAuthPermissionRequestDelegate.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -431,7 +641,112 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		FD18D1BA2B162656003B8A46 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD18D1CF2B162656003B8A46 /* CellcomHomtaskNetwork.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD18D1DB2B1626A4003B8A46 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD18D1F02B1626A5003B8A46 /* CellcomHomeTaskModels.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD18D20F2B16276E003B8A46 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD18D2242B16276E003B8A46 /* CellcomHometaskProtocols.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
+		FD18D1BE2B162656003B8A46 /* CellcomHomtaskNetwork */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FD18D1D42B162656003B8A46 /* Build configuration list for PBXNativeTarget "CellcomHomtaskNetwork" */;
+			buildPhases = (
+				FD18D1BA2B162656003B8A46 /* Headers */,
+				FD18D1BB2B162656003B8A46 /* Sources */,
+				FD18D1BC2B162656003B8A46 /* Frameworks */,
+				FD18D1BD2B162656003B8A46 /* Resources */,
+				FD18D2002B1626C0003B8A46 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FD18D1FF2B1626C0003B8A46 /* PBXTargetDependency */,
+				FD18D2322B16279A003B8A46 /* PBXTargetDependency */,
+			);
+			name = CellcomHomtaskNetwork;
+			productName = CellcomHomtaskNetwork;
+			productReference = FD18D1BF2B162656003B8A46 /* CellcomHomtaskNetwork.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		FD18D1C52B162656003B8A46 /* CellcomHomtaskNetworkTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FD18D1D72B162656003B8A46 /* Build configuration list for PBXNativeTarget "CellcomHomtaskNetworkTests" */;
+			buildPhases = (
+				FD18D1C22B162656003B8A46 /* Sources */,
+				FD18D1C32B162656003B8A46 /* Frameworks */,
+				FD18D1C42B162656003B8A46 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FD18D1C92B162656003B8A46 /* PBXTargetDependency */,
+				FD18D1CB2B162656003B8A46 /* PBXTargetDependency */,
+			);
+			name = CellcomHomtaskNetworkTests;
+			productName = CellcomHomtaskNetworkTests;
+			productReference = FD18D1C62B162656003B8A46 /* CellcomHomtaskNetworkTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		FD18D1DF2B1626A4003B8A46 /* CellcomHomeTaskModels */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FD18D1F52B1626A5003B8A46 /* Build configuration list for PBXNativeTarget "CellcomHomeTaskModels" */;
+			buildPhases = (
+				FD18D1DB2B1626A4003B8A46 /* Headers */,
+				FD18D1DC2B1626A4003B8A46 /* Sources */,
+				FD18D1DD2B1626A4003B8A46 /* Frameworks */,
+				FD18D1DE2B1626A4003B8A46 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CellcomHomeTaskModels;
+			productName = CellcomHomeTaskModels;
+			productReference = FD18D1E02B1626A4003B8A46 /* CellcomHomeTaskModels.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		FD18D2132B16276E003B8A46 /* CellcomHometaskProtocols */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FD18D2292B16276E003B8A46 /* Build configuration list for PBXNativeTarget "CellcomHometaskProtocols" */;
+			buildPhases = (
+				FD18D20F2B16276E003B8A46 /* Headers */,
+				FD18D2102B16276E003B8A46 /* Sources */,
+				FD18D2112B16276E003B8A46 /* Frameworks */,
+				FD18D2122B16276E003B8A46 /* Resources */,
+				FD18D26A2B162A2E003B8A46 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FD18D2692B162A2D003B8A46 /* PBXTargetDependency */,
+			);
+			name = CellcomHometaskProtocols;
+			productName = CellcomHometaskProtocols;
+			productReference = FD18D2142B16276E003B8A46 /* CellcomHometaskProtocols.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		FD3B38C12B06195900BBCF03 /* CellcomHomeTask */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = FD3B38D62B06195C00BBCF03 /* Build configuration list for PBXNativeTarget "CellcomHomeTask" */;
@@ -439,10 +754,14 @@
 				FD3B38BE2B06195900BBCF03 /* Sources */,
 				FD3B38BF2B06195900BBCF03 /* Frameworks */,
 				FD3B38C02B06195900BBCF03 /* Resources */,
+				FD18D1B42B16261D003B8A46 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				FD18D1D12B162656003B8A46 /* PBXTargetDependency */,
+				FD18D1F22B1626A5003B8A46 /* PBXTargetDependency */,
+				FD18D2262B16276E003B8A46 /* PBXTargetDependency */,
 			);
 			name = CellcomHomeTask;
 			productName = CellcomHomeTask;
@@ -459,6 +778,20 @@
 				LastSwiftUpdateCheck = 1500;
 				LastUpgradeCheck = 1500;
 				TargetAttributes = {
+					FD18D1BE2B162656003B8A46 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+					FD18D1C52B162656003B8A46 = {
+						CreatedOnToolsVersion = 15.0;
+						TestTargetID = FD3B38C12B06195900BBCF03;
+					};
+					FD18D1DF2B1626A4003B8A46 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+					FD18D2132B16276E003B8A46 = {
+						CreatedOnToolsVersion = 15.0;
+						LastSwiftMigration = 1500;
+					};
 					FD3B38C12B06195900BBCF03 = {
 						CreatedOnToolsVersion = 15.0;
 					};
@@ -478,11 +811,43 @@
 			projectRoot = "";
 			targets = (
 				FD3B38C12B06195900BBCF03 /* CellcomHomeTask */,
+				FD18D1BE2B162656003B8A46 /* CellcomHomtaskNetwork */,
+				FD18D1C52B162656003B8A46 /* CellcomHomtaskNetworkTests */,
+				FD18D1DF2B1626A4003B8A46 /* CellcomHomeTaskModels */,
+				FD18D2132B16276E003B8A46 /* CellcomHometaskProtocols */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		FD18D1BD2B162656003B8A46 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD18D1C42B162656003B8A46 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD18D1DE2B1626A4003B8A46 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD18D2122B16276E003B8A46 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FD3B38C02B06195900BBCF03 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -495,82 +860,158 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		FD18D1BB2B162656003B8A46 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD18D2072B162719003B8A46 /* NetworkWorker+PopularMoviesProvider.swift in Sources */,
+				FD18D20E2B162720003B8A46 /* NetworkWorker+SessionProvider.swift in Sources */,
+				FD18D20A2B162720003B8A46 /* NetworkWorker+AccountUpdater.swift in Sources */,
+				FD18D2092B162720003B8A46 /* NetworkWorker+GuestSessionProvider.swift in Sources */,
+				FD18D2022B162719003B8A46 /* NetworkWorker+HighResImageProvider.swift in Sources */,
+				FD18D2012B1626EC003B8A46 /* NetworkWorker.swift in Sources */,
+				FD18D2042B162719003B8A46 /* NetworkWorker+MyFavoritesMoviesProvider.swift in Sources */,
+				FD18D2872B163662003B8A46 /* URLSessionDataTask+URLSessionDataTask.swift in Sources */,
+				FD18D2792B162A8A003B8A46 /* AuthenticationNetworkDecorator.swift in Sources */,
+				FD18D27F2B162EAE003B8A46 /* AccountDetailsProviderWorker.swift in Sources */,
+				FD18D27E2B162EA7003B8A46 /* AccountDetailsProviderNetworkDecorator.swift in Sources */,
+				FD18D20D2B162720003B8A46 /* NetworkWorker+AccountDetailsProvider.swift in Sources */,
+				FD18D20C2B162720003B8A46 /* NetworkWorker+SessionUpdater.swift in Sources */,
+				FD18D2782B162A8A003B8A46 /* AuthWorker.swift in Sources */,
+				FD18D2052B162719003B8A46 /* NetworkWorker+FavoriteMovieUpdater.swift in Sources */,
+				FD18D20B2B162720003B8A46 /* NetworkWorker+RequestTokenProvider.swift in Sources */,
+				FD18D2032B162719003B8A46 /* NetworkWorker+CurrentlyBroadcastMoviesProvider.swift in Sources */,
+				FD18D2062B162719003B8A46 /* NetworkWorker+LowResImageProvider.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD18D1C22B162656003B8A46 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD18D1CE2B162656003B8A46 /* CellcomHomtaskNetworkTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD18D1DC2B1626A4003B8A46 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD18D2452B1628DE003B8A46 /* Session.swift in Sources */,
+				FD18D2472B1628DE003B8A46 /* GuestSession.swift in Sources */,
+				FD18D2852B1635EB003B8A46 /* Session+CodingKeys.swift in Sources */,
+				FD18D2842B1635EB003B8A46 /* RequestToken+CodingKeys.swift in Sources */,
+				FD18D2832B1635E5003B8A46 /* Movie+CodingKeys.swift in Sources */,
+				FD18D23D2B1628D7003B8A46 /* ErrorData.swift in Sources */,
+				FD18D23C2B1628D7003B8A46 /* MovieList.swift in Sources */,
+				FD18D2812B1635E5003B8A46 /* String+Extensions.swift in Sources */,
+				FD18D2802B1635E5003B8A46 /* MovieList+CodingKeys.swift in Sources */,
+				FD18D23E2B1628D7003B8A46 /* FavoriteMovie.swift in Sources */,
+				FD18D2482B1628E1003B8A46 /* TMDBResponse.swift in Sources */,
+				FD18D23B2B1628D7003B8A46 /* MovieFetchingError.swift in Sources */,
+				FD18D23F2B1628D7003B8A46 /* Movie.swift in Sources */,
+				FD18D2442B1628DE003B8A46 /* Account.swift in Sources */,
+				FD18D2822B1635E5003B8A46 /* FavoriteMovie+CodingKeys.swift in Sources */,
+				FD18D2462B1628DE003B8A46 /* RequestToken.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD18D2102B16276E003B8A46 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD18D2632B162907003B8A46 /* SessionUpdater.swift in Sources */,
+				FD18D2542B162901003B8A46 /* CurrentlyBroadcastMoviePagesProvider.swift in Sources */,
+				FD18D2552B162901003B8A46 /* HighResImageProvider.swift in Sources */,
+				FD18D2622B162907003B8A46 /* RequestTokenProvider.swift in Sources */,
+				FD18D2512B162901003B8A46 /* PopularMoviePagesProvider.swift in Sources */,
+				FD18D27D2B162E62003B8A46 /* UserAuthPermissionRequestDelegate.swift in Sources */,
+				FD18D2642B162907003B8A46 /* AuthProvider.swift in Sources */,
+				FD18D2522B162901003B8A46 /* LowResImageProvider.swift in Sources */,
+				FD18D2602B162907003B8A46 /* SessionProvider.swift in Sources */,
+				FD18D2562B162901003B8A46 /* DataLoadingTask.swift in Sources */,
+				FD18D2652B162907003B8A46 /* AccountUpdater.swift in Sources */,
+				FD18D27B2B162DB4003B8A46 /* UserAuthPermissionRequestWorkerProtocol.swift in Sources */,
+				FD18D2612B162907003B8A46 /* GuestSessionProvider.swift in Sources */,
+				FD18D25F2B162907003B8A46 /* AccountDetailsProvider.swift in Sources */,
+				FD18D2532B162901003B8A46 /* FavoriteMovieUpdater.swift in Sources */,
+				FD18D2572B162901003B8A46 /* MyFavoriteMoviePagesProvider.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FD3B38BE2B06195900BBCF03 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FD3B392B2B0A03F100BBCF03 /* AuthenticationNetworkDecorator.swift in Sources */,
 				FD3B39482B0A6C5400BBCF03 /* MoviesListViewController.swift in Sources */,
-				FD3B39222B076D6500BBCF03 /* GuestSession.swift in Sources */,
-				FD3B39422B0A680500BBCF03 /* FavoriteMovie.swift in Sources */,
-				FD3B38E52B0632BC00BBCF03 /* Movie.swift in Sources */,
 				FD3B394A2B0A6C7C00BBCF03 /* MoviesListCoordinator.swift in Sources */,
-				FD3B39002B06442100BBCF03 /* Session.swift in Sources */,
 				FD3B390E2B07689800BBCF03 /* UserAuthPermissionWebViewController.swift in Sources */,
-				FD3B39382B0A4AA900BBCF03 /* ErrorData.swift in Sources */,
-				FD94FAAA2B0B82EF002A820F /* HighResImageProvider.swift in Sources */,
-				FD3B38E72B0632C500BBCF03 /* MovieList.swift in Sources */,
 				FDF840232B15C14B00FC2D9C /* UserAuthPermissionCoordinator.swift in Sources */,
 				FD18D18D2B161C11003B8A46 /* ErrorAlertFactory.swift in Sources */,
-				FD3B39062B06496700BBCF03 /* RequestToken.swift in Sources */,
-				FD3B39202B076D4700BBCF03 /* NetworkWorker+GuestSessionProvider.swift in Sources */,
-				FD94FAAC2B0B8302002A820F /* LowResImageProvider.swift in Sources */,
-				FD3B391E2B076D1600BBCF03 /* GuestSessionProvider.swift in Sources */,
-				FD3B38EA2B06332100BBCF03 /* MovieList+CodingKeys.swift in Sources */,
 				FDF840122B14AC6200FC2D9C /* MoviesPageWorker.swift in Sources */,
-				FD3B39252B09775700BBCF03 /* Session+CodingKeys.swift in Sources */,
 				FD3B38C62B06195900BBCF03 /* AppDelegate.swift in Sources */,
 				FD3B38C82B06195900BBCF03 /* SceneDelegate.swift in Sources */,
 				FDF8401F2B15C0F200FC2D9C /* MovieDetailsViewController.swift in Sources */,
 				FDF8401D2B15C0D300FC2D9C /* MovieDetailsViewModel.swift in Sources */,
-				FD94FAB02B0B83D2002A820F /* NetworkWorker+HighResImageProvider.swift in Sources */,
 				FD94FAB42B0B997D002A820F /* MovieListCell.swift in Sources */,
-				FD3B38FE2B063D2400BBCF03 /* Account.swift in Sources */,
-				FD3B392E2B0A1B1000BBCF03 /* SessionUpdater.swift in Sources */,
-				FD3B390B2B07680E00BBCF03 /* AuthWorker.swift in Sources */,
-				FD3B39022B0644FE00BBCF03 /* AccountDetailsProvider.swift in Sources */,
-				FD3B38F62B06356F00BBCF03 /* MovieFetchingError.swift in Sources */,
 				FD18D1942B161E93003B8A46 /* PresentingCoordinator.swift in Sources */,
-				FD3B39442B0A684E00BBCF03 /* FavoriteMovie+CodingKeys.swift in Sources */,
-				FD3B39142B076B3400BBCF03 /* SessionProvider.swift in Sources */,
-				FD3B393C2B0A4E2400BBCF03 /* AccountDetailsProviderNetworkDecorator.swift in Sources */,
 				FDF840192B14C26100FC2D9C /* MovieDetailsFactory.swift in Sources */,
 				FD3B39462B0A6C3800BBCF03 /* MoviesListViewModel.swift in Sources */,
-				FD3B39292B09F83600BBCF03 /* NetworkWorker+SessionUpdater.swift in Sources */,
-				FD3B39122B076B1D00BBCF03 /* RequestTokenProvider.swift in Sources */,
-				FD3B393A2B0A4BFE00BBCF03 /* FavoriteMovieUpdater.swift in Sources */,
-				FD3B38F22B0634F800BBCF03 /* MyFavoriteMoviePagesProvider.swift in Sources */,
-				FD3B39192B076B7500BBCF03 /* NetworkWorker+RequestTokenProvider.swift in Sources */,
-				FD3B38EC2B06334000BBCF03 /* Movie+CodingKeys.swift in Sources */,
-				FD3B39322B0A3F9800BBCF03 /* NetworkWorker+AccountUpdater.swift in Sources */,
-				FD3B393E2B0A4E5900BBCF03 /* AccountDetailsProviderWorker.swift in Sources */,
 				FD18D18F2B161C5F003B8A46 /* MovieDetailsView.swift in Sources */,
 				FD94FAB22B0B8466002A820F /* MoviesProviderFacade.swift in Sources */,
-				FD3B391C2B076B9E00BBCF03 /* AuthProvider.swift in Sources */,
-				FD3B39362B0A4A0F00BBCF03 /* TMDBResponse.swift in Sources */,
 				FD3B38E22B06239100BBCF03 /* MoviesListFactory.swift in Sources */,
-				FD94FAAE2B0B839D002A820F /* NetworkWorker+LowResImageProvider.swift in Sources */,
-				FD3B38FA2B0635FC00BBCF03 /* NetworkWorker+MyFavoritesMoviesProvider.swift in Sources */,
-				FD3B38FC2B06361500BBCF03 /* NetworkWorker+CurrentlyBroadcastMoviesProvider.swift in Sources */,
-				FD3B38F02B0634E000BBCF03 /* PopularMoviePagesProvider.swift in Sources */,
-				FD3B38F82B0635BD00BBCF03 /* NetworkWorker+PopularMoviesProvider.swift in Sources */,
 				FD94FAB62B0B9E17002A820F /* MovieListCellViewModel.swift in Sources */,
 				FDF840212B15C10000FC2D9C /* MovieDetailsCoordinator.swift in Sources */,
-				FD3B38F42B06351700BBCF03 /* CurrentlyBroadcastMoviePagesProvider.swift in Sources */,
-				FD3B39342B0A49F400BBCF03 /* String+Extensions.swift in Sources */,
-				FD3B39172B076B5700BBCF03 /* NetworkWorker+SessionProvider.swift in Sources */,
-				FD3B39272B09777900BBCF03 /* RequestToken+CodingKeys.swift in Sources */,
 				FDF8401B2B14C32000FC2D9C /* MoviesListRouter.swift in Sources */,
-				FD3B39302B0A3EF900BBCF03 /* AccountUpdater.swift in Sources */,
-				FD3B39042B06452300BBCF03 /* NetworkWorker+AccountDetailsProvider.swift in Sources */,
-				FD3B38E02B061E1300BBCF03 /* NetworkWorker.swift in Sources */,
 				FD18D1962B161EB0003B8A46 /* ErrorDisplayingRouter.swift in Sources */,
 				FD18D1912B161D85003B8A46 /* MovieDetailsRouter.swift in Sources */,
-				FD3B39402B0A663000BBCF03 /* NetworkWorker+FavoriteMovieUpdater.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FD18D1C92B162656003B8A46 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FD18D1BE2B162656003B8A46 /* CellcomHomtaskNetwork */;
+			targetProxy = FD18D1C82B162656003B8A46 /* PBXContainerItemProxy */;
+		};
+		FD18D1CB2B162656003B8A46 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FD3B38C12B06195900BBCF03 /* CellcomHomeTask */;
+			targetProxy = FD18D1CA2B162656003B8A46 /* PBXContainerItemProxy */;
+		};
+		FD18D1D12B162656003B8A46 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FD18D1BE2B162656003B8A46 /* CellcomHomtaskNetwork */;
+			targetProxy = FD18D1D02B162656003B8A46 /* PBXContainerItemProxy */;
+		};
+		FD18D1F22B1626A5003B8A46 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FD18D1DF2B1626A4003B8A46 /* CellcomHomeTaskModels */;
+			targetProxy = FD18D1F12B1626A5003B8A46 /* PBXContainerItemProxy */;
+		};
+		FD18D1FF2B1626C0003B8A46 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FD18D1DF2B1626A4003B8A46 /* CellcomHomeTaskModels */;
+			targetProxy = FD18D1FE2B1626C0003B8A46 /* PBXContainerItemProxy */;
+		};
+		FD18D2262B16276E003B8A46 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FD18D2132B16276E003B8A46 /* CellcomHometaskProtocols */;
+			targetProxy = FD18D2252B16276E003B8A46 /* PBXContainerItemProxy */;
+		};
+		FD18D2322B16279A003B8A46 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FD18D2132B16276E003B8A46 /* CellcomHometaskProtocols */;
+			targetProxy = FD18D2312B16279A003B8A46 /* PBXContainerItemProxy */;
+		};
+		FD18D2692B162A2D003B8A46 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FD18D1DF2B1626A4003B8A46 /* CellcomHomeTaskModels */;
+			targetProxy = FD18D2682B162A2D003B8A46 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		FD3B38D02B06195C00BBCF03 /* LaunchScreen.storyboard */ = {
@@ -584,6 +1025,243 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		FD18D1D52B162656003B8A46 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = e.kulinichev.CellcomHomtaskNetwork;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		FD18D1D62B162656003B8A46 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = e.kulinichev.CellcomHomtaskNetwork;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		FD18D1D82B162656003B8A46 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = e.kulinichev.CellcomHomtaskNetworkTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CellcomHomeTask.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/CellcomHomeTask";
+			};
+			name = Debug;
+		};
+		FD18D1D92B162656003B8A46 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = e.kulinichev.CellcomHomtaskNetworkTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CellcomHomeTask.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/CellcomHomeTask";
+			};
+			name = Release;
+		};
+		FD18D1F62B1626A5003B8A46 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = e.kulinichev.CellcomHomeTaskModels;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		FD18D1F72B1626A5003B8A46 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = e.kulinichev.CellcomHomeTaskModels;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		FD18D22A2B16276E003B8A46 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = e.kulinichev.CellcomHometaskProtocols;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		FD18D22B2B16276E003B8A46 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = e.kulinichev.CellcomHometaskProtocols;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		FD3B38D42B06195C00BBCF03 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -706,6 +1384,7 @@
 		FD3B38D72B06195C00BBCF03 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -735,6 +1414,7 @@
 		FD3B38D82B06195C00BBCF03 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -764,6 +1444,42 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		FD18D1D42B162656003B8A46 /* Build configuration list for PBXNativeTarget "CellcomHomtaskNetwork" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FD18D1D52B162656003B8A46 /* Debug */,
+				FD18D1D62B162656003B8A46 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FD18D1D72B162656003B8A46 /* Build configuration list for PBXNativeTarget "CellcomHomtaskNetworkTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FD18D1D82B162656003B8A46 /* Debug */,
+				FD18D1D92B162656003B8A46 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FD18D1F52B1626A5003B8A46 /* Build configuration list for PBXNativeTarget "CellcomHomeTaskModels" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FD18D1F62B1626A5003B8A46 /* Debug */,
+				FD18D1F72B1626A5003B8A46 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FD18D2292B16276E003B8A46 /* Build configuration list for PBXNativeTarget "CellcomHometaskProtocols" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FD18D22A2B16276E003B8A46 /* Debug */,
+				FD18D22B2B16276E003B8A46 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		FD3B38BD2B06195900BBCF03 /* Build configuration list for PBXProject "CellcomHomeTask" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

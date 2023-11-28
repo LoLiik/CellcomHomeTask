@@ -6,15 +6,13 @@
 //
 
 import Foundation
+import CellcomHometaskProtocols
+import CellcomHomeTaskModels
 
 enum MovieListType {
     case popular
     case myFavorites
     case currentBroadcast
-}
-
-public protocol DataLoadingTask: AnyObject {
-    func cancel()
 }
 
 protocol MoviesListViewModelProtocol: AnyObject {
