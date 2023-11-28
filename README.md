@@ -18,11 +18,12 @@ Authorization took much more time then i thought
     - fetch image for cell (small resolution) and display in cell
     - movies list pagination
     - cancel image fetch in 'prepareForReuse'
+    - displays errors in alerts  
  
 # TODO:
  - movies list 
-    - alerts with errors 
     - refresh indicator during load
+    - retry request when error
  
  - movie detail screen:
     - cancel request if user leave from screen
