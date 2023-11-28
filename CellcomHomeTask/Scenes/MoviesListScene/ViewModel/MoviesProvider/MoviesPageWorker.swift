@@ -51,7 +51,7 @@ extension MoviesPageWorker: MoviesProvider {
                     self.currentPage += 1
                 }
                 self.totalPagesCount = movieList.totalPagesCount
-                movies.append(contentsOf: movieList.movies)
+                self.movies.append(contentsOf: movieList.movies)
                 completion(.success(()))
             case let .failure(error):
                 completion(.failure(error))

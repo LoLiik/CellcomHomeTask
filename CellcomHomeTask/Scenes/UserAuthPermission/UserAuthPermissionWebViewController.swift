@@ -39,9 +39,12 @@ final class UserAuthPermissionWebViewController: UIViewController, WKUIDelegate 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        guard let url = url, let webView = webView else { return }
+        guard let url = url else { return }
         let myRequest = URLRequest(url: url)
-        webView.load(myRequest)
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self, let webView = self.webView else { return }
+            webView.load(myRequest)
+        }
     }
 }
 

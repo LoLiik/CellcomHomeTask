@@ -83,7 +83,7 @@ final class MoviesListViewModel: MoviesListViewModelProtocol {
         shouldDisplayEmptyStateWhileChangingType = true
         moviesListDataLoadingTask = moviesProvider.fetchMovies() { [weak self] in
             guard let self = self else { return }
-            if currentListType == .myFavorites {
+            if self.currentListType == .myFavorites {
                 self.shouldReloadFavoriteMovies = false
             }
             self.shouldDisplayEmptyStateWhileChangingType = false

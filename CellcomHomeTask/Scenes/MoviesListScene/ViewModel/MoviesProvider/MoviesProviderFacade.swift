@@ -26,11 +26,11 @@ class MoviesProviderFacade {
     private var currentMovieProvider: MoviesProvider {
         switch currentMovieListType {
         case .popular:
-            popularMoviesProvider
+            return popularMoviesProvider
         case .currentBroadcast:
-            currentBroadcastMoviesProvider
+            return currentBroadcastMoviesProvider
         case .myFavorites:
-            myFavoriteMoviesProvider
+            return myFavoriteMoviesProvider
         }
     }
     
