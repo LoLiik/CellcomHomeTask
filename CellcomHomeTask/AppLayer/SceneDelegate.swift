@@ -20,7 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let window = UIWindow(windowScene: windowScene)
         
         /// 3. Create a view hierarchy programmatically
-        let rootViewController = MoviesListBuilder().build()
+        let rootViewController = MoviesListFactory().build()
         let navigation = UINavigationController(rootViewController: rootViewController)
         
         /// 4. Set the root view controller of the window with your view controller

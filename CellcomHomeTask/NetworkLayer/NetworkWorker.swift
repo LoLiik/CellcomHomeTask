@@ -10,8 +10,8 @@ import Foundation
 public class NetworkWorker {
     struct Config {
         static let apiKey = "2c46288716a18fb7aadcc2a801f3fc6b"
-        var accountId: Int?
-        var sessionId: String?
+        static var accountId: Int?
+        static var sessionId: String?
     }
     
     var config: Config = Config()

@@ -15,6 +15,7 @@ final class MoviesListViewController: UITableViewController {
         super.init(nibName: nil, bundle: nil)
     }
     
+    @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -23,7 +24,7 @@ final class MoviesListViewController: UITableViewController {
         super.viewDidLoad()
         setupTableView()
         setupSegmentedControl()
-        viewModel.viewLoaded()
+        viewModel.loadMovies()
     }
     
     private func setupTableView() {
@@ -68,6 +69,20 @@ extension MoviesListViewController {
     public override func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         guard let cell = cell as? MovieListCell else { return }
         cell.cancelLoad()
+    }
+    
+    public override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        let almostRichedBottomMovie = viewModel.movies.count - indexPath.row < 5
+        let haveMoreMoviesToShow = viewModel.haveMoreMoviesToLoad
+        if almostRichedBottomMovie && haveMoreMoviesToShow {
+            viewModel.loadMovies()
+        }
+    }
+    
+    public override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        let movie = viewModel.movies[indexPath.row]
+        viewModel.showMovieDetails(movie)
+        return indexPath
     }
 }
 

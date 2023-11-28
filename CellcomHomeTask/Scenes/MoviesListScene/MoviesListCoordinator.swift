@@ -8,26 +8,18 @@
 import UIKit
 import Foundation
 
+protocol MoviesListCoordinatorProtocol: AnyObject {
+    func show(_ presentedViewContoller: UIViewController)
+}
+
 final class MoviesListCoordinator {
     weak var viewController: UIViewController?
 }
 
-extension MoviesListCoordinator: UserAuthPermissionRequestWorkerProtocol {
-    func requestUserAuthPermission(url: URL, completion: @escaping (Result<Void, MovieFetchingError>) -> Void) {
-        DispatchQueue.main.async { [weak self] in
-            guard let self = self else { return }
-            let authPermissionWebViewController = UserAuthPermissionWebViewController(delegate: self)
-            self.viewController?.present(authPermissionWebViewController, animated: true)
-            authPermissionWebViewController.requestUserAuthPermission(url: url, completion: completion)
-        }
+extension MoviesListCoordinator: MoviesListCoordinatorProtocol {
+    func show(_ viewControllerToShow: UIViewController) {
+        viewController?.present(viewControllerToShow, animated: true)
     }
 }
 
-extension MoviesListCoordinator: UserAuthPermissionRequestDelegate {
-    func didRequestUserAuthWithSuccess() {
-        DispatchQueue.main.async { [weak self] in
-            self?.viewController?.dismiss(animated: true)
-        }
-    }
-}
-
+extension MoviesListCoordinator: UserAuthPermissionCoordinator { }

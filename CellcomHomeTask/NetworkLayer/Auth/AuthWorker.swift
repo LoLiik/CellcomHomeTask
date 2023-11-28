@@ -14,7 +14,23 @@ public protocol UserAuthPermissionRequestWorkerProtocol: AnyObject {
 
 
 public protocol AuthWorkerProtocol: AnyObject {
-    func startAuthentication(completion: @escaping (Result<Void, MovieFetchingError>) -> Void)
+    func startAuthentication(updatableTask: DataLoadingTaskUpdatable, completion: @escaping (Result<Void, MovieFetchingError>) -> Void)
+}
+
+public protocol DataLoadingTaskUpdatable: AnyObject {
+    var currentTask: DataLoadingTask? { get set }
+}
+
+public class UpdatableCancebleTaskProxy {
+    public var currentTask: DataLoadingTask?
+}
+
+extension UpdatableCancebleTaskProxy: DataLoadingTaskUpdatable { }
+
+extension UpdatableCancebleTaskProxy: DataLoadingTask {
+    public func cancel() {
+        currentTask?.cancel()
+    }
 }
 
 /// Responsible for authentication process
@@ -34,21 +50,21 @@ public final class AuthWorker {
         self.sessionUpdater = sessionUpdater
     }
     
-    private func approveToken(_ requestToken: RequestToken, completion: @escaping (Result<Void, MovieFetchingError>) -> Void) {
+    private func approveToken(_ requestToken: RequestToken, updatableTask: DataLoadingTaskUpdatable, completion: @escaping (Result<Void, MovieFetchingError>) -> Void) {
         let urlPath = "\(NetworkWorker.Paths.userAuthPermission)\(requestToken.token)"
         guard let url = URL(string: urlPath) else { return }
         userAuthPermissionRequestWorker.requestUserAuthPermission(url: url) { [weak self] result in
             switch result {
             case .success:
-                self?.generateSessionId(with: requestToken, completion: completion)
+                self?.generateSessionId(with: requestToken, updatableTask: updatableTask, completion: completion)
             case let .failure(error):
                 completion(.failure(error))
             }
         }
     }
     
-    private func generateSessionId(with requestToken: RequestToken, completion: @escaping (Result<Void, MovieFetchingError>) -> Void) {
-        _ = authProvider.generateSession(token: requestToken) { [weak self] result in
+    private func generateSessionId(with requestToken: RequestToken, updatableTask: DataLoadingTaskUpdatable, completion: @escaping (Result<Void, MovieFetchingError>) -> Void) {
+        let currentTask = authProvider.generateSession(token: requestToken) { [weak self] result in
             switch result {
             case let .success(session):
                 self?.sessionUpdater.updateSessionId(session.id)
@@ -57,19 +73,21 @@ public final class AuthWorker {
                 completion(.failure(error))
             }
         }
+        updatableTask.currentTask = currentTask
     }
 }
 
 extension AuthWorker: AuthWorkerProtocol {
-    public func startAuthentication(completion: @escaping (Result<Void, MovieFetchingError>) -> Void) {
-        _ = authProvider.generateRequestToken { [weak self] tokenResult in
+    public func startAuthentication(updatableTask: DataLoadingTaskUpdatable, completion: @escaping (Result<Void, MovieFetchingError>) -> Void) {
+        let currentTask = authProvider.generateRequestToken { [weak self] tokenResult in
             switch tokenResult {
             case let .success(requestToken):
-                self?.approveToken(requestToken, completion: completion)
+                self?.approveToken(requestToken, updatableTask: updatableTask, completion: completion)
             case let .failure(error):
                 completion(.failure(error))
             }
         }
+        updatableTask.currentTask = currentTask
     }
 }
 

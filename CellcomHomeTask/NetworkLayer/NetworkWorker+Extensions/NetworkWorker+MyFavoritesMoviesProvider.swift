@@ -5,14 +5,14 @@
 //  Created by Евгений Кулиничев on 19.11.2023.
 //
 
-extension NetworkWorker: MyFavoriteMoviesProvider {
+extension NetworkWorker: MyFavoriteMoviePagesProvider {
     public func fetchFavoriteMovies(page: Int, completion: @escaping (Result<MovieList, MovieFetchingError>) -> Void) -> DataLoadingTask? {
-        guard let sessionId = config.sessionId else {
+        guard let sessionId = Config.sessionId else {
             completion(.failure(.authDenied))
             return nil
         }
         
-        guard let accountId = config.accountId else {
+        guard let accountId = Config.accountId else {
             completion(.failure(.noAccountId))
             return nil
         }

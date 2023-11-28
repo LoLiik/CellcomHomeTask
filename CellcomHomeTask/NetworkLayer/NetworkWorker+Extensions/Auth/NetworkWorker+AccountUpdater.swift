@@ -7,7 +7,7 @@
 
 extension NetworkWorker: AccountUpdater {
     public func updateAccountId(_ accountId: Int) {
-        config.accountId = accountId
+        Config.accountId = accountId
     }
 }
 

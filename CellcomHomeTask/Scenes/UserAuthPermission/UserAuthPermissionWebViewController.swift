@@ -13,10 +13,11 @@ protocol UserAuthPermissionRequestDelegate: AnyObject {
 }
 
 final class UserAuthPermissionWebViewController: UIViewController, WKUIDelegate {
-    private var webView: WKWebView!
+    private var webView: WKWebView?
     private let delegate: UserAuthPermissionRequestDelegate
     
     private var resultHandler: ((Result<Void, MovieFetchingError>) -> Void)?
+    private var url: URL?
     
     init(delegate: UserAuthPermissionRequestDelegate) {
         self.delegate = delegate
@@ -29,10 +30,18 @@ final class UserAuthPermissionWebViewController: UIViewController, WKUIDelegate 
     
     override func loadView() {
         let webConfiguration = WKWebViewConfiguration()
-        webView = WKWebView(frame: .zero, configuration: webConfiguration)
+        let webView = WKWebView(frame: .zero, configuration: webConfiguration)
         webView.uiDelegate = self
         webView.navigationDelegate = self
+        self.webView = webView
         view = webView
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        guard let url = url, let webView = webView else { return }
+        let myRequest = URLRequest(url: url)
+        webView.load(myRequest)
     }
 }
 
@@ -62,8 +71,7 @@ extension UserAuthPermissionWebViewController: WKNavigationDelegate{
 
 extension UserAuthPermissionWebViewController: UserAuthPermissionRequestWorkerProtocol {
     func requestUserAuthPermission(url: URL, completion: @escaping (Result<Void, MovieFetchingError>) -> Void) {
-        let myRequest = URLRequest(url: url)
+        self.url = url
         resultHandler = completion
-        webView.load(myRequest)
     }
 }

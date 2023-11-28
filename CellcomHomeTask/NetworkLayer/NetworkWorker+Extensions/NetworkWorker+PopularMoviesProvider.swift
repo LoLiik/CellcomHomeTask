@@ -7,7 +7,7 @@
 
 import Foundation
 
-extension NetworkWorker: PopularMoviesProvider {
+extension NetworkWorker: PopularMoviePagesProvider {
     public func fetchPopularMovies(page: Int, completion: @escaping (Result<MovieList, MovieFetchingError>) -> Void) -> DataLoadingTask? {
         let urlPath = createUrlWithApiKey(Paths.popularMovies).addParameter(parameterName: "page", value: page)
         guard let url = urlPath.url else { return nil }

@@ -5,7 +5,7 @@
 //  Created by Евгений Кулиничев on 19.11.2023.
 //
 
-extension NetworkWorker: CurrentlyBroadcastMoviesProvider {
+extension NetworkWorker: CurrentlyBroadcastMoviePagesProvider {
     public func fetchCurrentlyBroadcastMovies(page: Int, completion: @escaping (Result<MovieList, MovieFetchingError>) -> Void) -> DataLoadingTask? {
         let urlPath = createUrlWithApiKey(Paths.currentlyBroadcastMoviesUrlPath).addParameter(parameterName: "page", value: page)
         guard let url = urlPath.url else { return nil }

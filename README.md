@@ -1,30 +1,33 @@
 Authorization took much more time then i thought
-# Done (for 10 hours):
+# Done:
+ - user can use app without authorization - for browsing popular and current broadcasting movies
+ - if user tries to get favorite movies list or add to favorite user promted to authorize
+
  - network layer:
-    -- separate protocols for different purposes
+    - separate protocols for different purposes
     
  - authorization:
-    -- authorization primarily done in 'AuthWorker'
-    -- user permission request in WebView 'UserAuthPermissionWebViewController'
-    -- any request can be wrapped via generic decorator 'AuthenticationNetworkDecorator'
+    - authorization primarily done in 'AuthWorker'
+    - user permission request in WebView 'UserAuthPermissionWebViewController'
+    - any request can be wrapped via generic decorator 'AuthenticationNetworkDecorator'
 
  - account id fetch:
     -- any request can be wrapped via generic decorator 'AccountDetailsProviderNetworkDecorator'
     
  - movies list (popular, current broadcast, my favorites)
-    -- fetch image for cell (small resolution) and display in cell
-    -- cancel image fetch in 'prepareForReuse'
+    - fetch image for cell (small resolution) and display in cell
+    - movies list pagination
+    - cancel image fetch in 'prepareForReuse'
  
 # TODO:
  - movies list 
-    -- alerts with errors 
-    -- movies list pagination
-    -- indicator during load
+    - alerts with errors 
+    - refresh indicator during load
  
  - movie detail screen:
-    -- fetch movie poster image (big resolution) and display in cell
-    -- cancel request if user leave from screen
-    -- update favorite movie state (add to/ remove from favorites) - network layer ready 
+    - cancel request if user leave from screen
+    
+- implement way of syncronizing favorites (now we can only add to favorites and when loading movie details screen we do not know what is favorite)
 
 
 #  Cellcom home task requirments

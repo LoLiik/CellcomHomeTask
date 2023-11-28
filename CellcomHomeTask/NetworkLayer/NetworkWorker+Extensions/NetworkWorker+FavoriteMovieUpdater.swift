@@ -7,12 +7,12 @@
 
 extension NetworkWorker: FavoriteMovieUpdater {
     public func updateFavoriteMovie(movieId: Int, isFavorite: Bool, completion: @escaping (Result<TMDBResponse, MovieFetchingError>) -> Void) -> DataLoadingTask? {
-        guard let sessionId = config.sessionId else {
+        guard let sessionId = Config.sessionId else {
             completion(.failure(.authDenied))
             return nil
         }
         
-        guard let accountId = config.accountId else {
+        guard let accountId = Config.accountId else {
             completion(.failure(.noAccountId))
             return nil
         }

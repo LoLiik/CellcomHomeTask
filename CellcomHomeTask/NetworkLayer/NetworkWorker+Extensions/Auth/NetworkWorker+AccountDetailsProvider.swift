@@ -7,7 +7,7 @@
 
 extension NetworkWorker: AccountDetailsProvider {
     public func fetchAccountDetails(completion: @escaping (Result<Account, MovieFetchingError>) -> Void) -> DataLoadingTask? {
-        guard let sessionId = config.sessionId else { return nil }
+        guard let sessionId = Config.sessionId else { return nil }
         let urlPath = createUrlWithApiKey(Paths.accountDetails).addParameter(parameterName: "session_id", value: sessionId)
         guard let url = urlPath.url else { return nil }
         return fetch(url: url, completion: completion)

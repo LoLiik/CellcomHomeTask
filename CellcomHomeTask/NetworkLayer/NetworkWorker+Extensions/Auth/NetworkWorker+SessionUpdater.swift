@@ -7,7 +7,7 @@
 
 extension NetworkWorker: SessionUpdater {
     public func updateSessionId(_ sessionId: String) {
-        config.sessionId = sessionId
+        Config.sessionId = sessionId
     }
 }
 
