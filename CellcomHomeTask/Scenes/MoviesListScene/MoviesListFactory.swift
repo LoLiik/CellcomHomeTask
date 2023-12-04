@@ -6,9 +6,9 @@
 //
 
 import UIKit
-import CellcomHomtaskNetwork
+import CellcomHometaskNetwork
 import CellcomHometaskProtocols
-import CellcomHomeTaskModels
+import CellcomHometaskModels
 
 final class MoviesListFactory {
     func build() -> UIViewController {

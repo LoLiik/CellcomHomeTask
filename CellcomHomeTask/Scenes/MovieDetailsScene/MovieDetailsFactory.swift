@@ -5,8 +5,8 @@
 //  Created by Евгений Кулиничев on 27.11.2023.
 //
 
-import CellcomHomtaskNetwork
-import CellcomHomeTaskModels
+import CellcomHometaskNetwork
+import CellcomHometaskModels
 import UIKit
 
 protocol MovieDetailsFactoryProtocol: AnyObject {

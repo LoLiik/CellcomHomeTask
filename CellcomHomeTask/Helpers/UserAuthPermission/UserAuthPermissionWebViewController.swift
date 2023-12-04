@@ -8,8 +8,8 @@
 import UIKit
 import WebKit
 import CellcomHometaskProtocols
-import CellcomHomeTaskModels
-import CellcomHomtaskNetwork
+import CellcomHometaskModels
+import CellcomHometaskNetwork
 
 final class UserAuthPermissionWebViewController: UIViewController, WKUIDelegate {
     private var webView: WKWebView?

@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import CellcomHomeTaskModels
+import CellcomHometaskModels
 
 final class MovieDetailsView: UIView {
     var favoriteButtonTappedHandler: (() -> Void)?

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:CellcomHometaskModels">
+   </FileRef>
+   <FileRef
+      location = "group:CellcomHometaskNetwork">
+   </FileRef>
+   <FileRef
+      location = "group:CellcomHometaskProtocols">
+   </FileRef>
+   <FileRef
+      location = "group:/Users/lol_ik/Projects/CellcomHomeTask/iOSCellcomHomeTask.xcodeproj">
+   </FileRef>
+</Workspace>

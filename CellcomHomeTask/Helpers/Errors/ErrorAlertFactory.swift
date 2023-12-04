@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import CellcomHomeTaskModels
+import CellcomHometaskModels
 
 protocol ErrorAlertFactoryProtocol: AnyObject {
     func build(with error: MovieFetchingError) -> UIAlertController

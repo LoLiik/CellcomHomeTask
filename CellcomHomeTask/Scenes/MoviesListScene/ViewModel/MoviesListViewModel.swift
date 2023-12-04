@@ -7,7 +7,7 @@
 
 import Foundation
 import CellcomHometaskProtocols
-import CellcomHomeTaskModels
+import CellcomHometaskModels
 
 enum MovieListType {
     case popular

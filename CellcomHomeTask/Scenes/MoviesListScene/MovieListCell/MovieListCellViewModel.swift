@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import CellcomHomeTaskModels
+import CellcomHometaskModels
 import CellcomHometaskProtocols
 
 final class MovieListCellViewModel {

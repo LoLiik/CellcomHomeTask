@@ -8,8 +8,8 @@
 import Foundation
 import UIKit
 import CellcomHometaskProtocols
-import CellcomHomeTaskModels
-import CellcomHomtaskNetwork
+import CellcomHometaskModels
+import CellcomHometaskNetwork
 
 protocol UserAuthPermissionCoordinator: UserAuthPermissionRequestWorkerProtocol, UserAuthPermissionRequestDelegate {
     var viewController: UIViewController? { get }

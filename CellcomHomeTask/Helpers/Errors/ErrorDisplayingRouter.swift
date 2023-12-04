@@ -5,7 +5,7 @@
 //  Created by Евгений Кулиничев on 28.11.2023.
 //
 
-import CellcomHomeTaskModels
+import CellcomHometaskModels
 
 protocol ErrorDisplayingRouter: AnyObject {
     func displayError(_ error: MovieFetchingError)

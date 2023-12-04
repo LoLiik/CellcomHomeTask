@@ -5,7 +5,7 @@
 //  Created by Евгений Кулиничев on 20.11.2023.
 //
 
-import CellcomHomeTaskModels
+import CellcomHometaskModels
 import CellcomHometaskProtocols
 
 public protocol MoviesProvider: AnyObject {
