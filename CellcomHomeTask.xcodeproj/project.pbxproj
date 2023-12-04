@@ -55,21 +55,12 @@
 		FD18D2532B162901003B8A46 /* FavoriteMovieUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3B39392B0A4BFE00BBCF03 /* FavoriteMovieUpdater.swift */; };
 		FD18D2542B162901003B8A46 /* CurrentlyBroadcastMoviePagesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3B38F32B06351700BBCF03 /* CurrentlyBroadcastMoviePagesProvider.swift */; };
 		FD18D2552B162901003B8A46 /* HighResImageProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD94FAA92B0B82EF002A820F /* HighResImageProvider.swift */; };
-		FD18D2562B162901003B8A46 /* DataLoadingTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD18D2332B1627F5003B8A46 /* DataLoadingTask.swift */; };
+		FD18D2562B162901003B8A46 /* CancelableDataLoadingTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD18D2332B1627F5003B8A46 /* CancelableDataLoadingTask.swift */; };
 		FD18D2572B162901003B8A46 /* MyFavoriteMoviePagesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3B38F12B0634F800BBCF03 /* MyFavoriteMoviePagesProvider.swift */; };
-		FD18D25F2B162907003B8A46 /* AccountDetailsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3B39012B0644FE00BBCF03 /* AccountDetailsProvider.swift */; };
-		FD18D2602B162907003B8A46 /* SessionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3B39132B076B3400BBCF03 /* SessionProvider.swift */; };
-		FD18D2612B162907003B8A46 /* GuestSessionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3B391D2B076D1600BBCF03 /* GuestSessionProvider.swift */; };
-		FD18D2622B162907003B8A46 /* RequestTokenProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3B39112B076B1D00BBCF03 /* RequestTokenProvider.swift */; };
-		FD18D2632B162907003B8A46 /* SessionUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3B392D2B0A1B1000BBCF03 /* SessionUpdater.swift */; };
-		FD18D2642B162907003B8A46 /* AuthProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3B391B2B076B9E00BBCF03 /* AuthProvider.swift */; };
-		FD18D2652B162907003B8A46 /* AccountUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3B392F2B0A3EF900BBCF03 /* AccountUpdater.swift */; };
 		FD18D2662B162A2D003B8A46 /* CellcomHomeTaskModels.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD18D1E02B1626A4003B8A46 /* CellcomHomeTaskModels.framework */; };
 		FD18D2672B162A2D003B8A46 /* CellcomHomeTaskModels.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FD18D1E02B1626A4003B8A46 /* CellcomHomeTaskModels.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FD18D2782B162A8A003B8A46 /* AuthWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3B390A2B07680E00BBCF03 /* AuthWorker.swift */; };
 		FD18D2792B162A8A003B8A46 /* AuthenticationNetworkDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3B392A2B0A03F100BBCF03 /* AuthenticationNetworkDecorator.swift */; };
-		FD18D27B2B162DB4003B8A46 /* UserAuthPermissionRequestWorkerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD18D27A2B162DB4003B8A46 /* UserAuthPermissionRequestWorkerProtocol.swift */; };
-		FD18D27D2B162E62003B8A46 /* UserAuthPermissionRequestDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD18D27C2B162E62003B8A46 /* UserAuthPermissionRequestDelegate.swift */; };
 		FD18D27E2B162EA7003B8A46 /* AccountDetailsProviderNetworkDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3B393B2B0A4E2400BBCF03 /* AccountDetailsProviderNetworkDecorator.swift */; };
 		FD18D27F2B162EAE003B8A46 /* AccountDetailsProviderWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3B393D2B0A4E5900BBCF03 /* AccountDetailsProviderWorker.swift */; };
 		FD18D2802B1635E5003B8A46 /* MovieList+CodingKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3B38E92B06332100BBCF03 /* MovieList+CodingKeys.swift */; };
@@ -79,6 +70,15 @@
 		FD18D2842B1635EB003B8A46 /* RequestToken+CodingKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3B39262B09777900BBCF03 /* RequestToken+CodingKeys.swift */; };
 		FD18D2852B1635EB003B8A46 /* Session+CodingKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3B39242B09775600BBCF03 /* Session+CodingKeys.swift */; };
 		FD18D2872B163662003B8A46 /* URLSessionDataTask+URLSessionDataTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD18D2862B163662003B8A46 /* URLSessionDataTask+URLSessionDataTask.swift */; };
+		FD18D2892B1DCD5D003B8A46 /* AccountUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3B392F2B0A3EF900BBCF03 /* AccountUpdater.swift */; };
+		FD18D28A2B1DCD5D003B8A46 /* UserAuthPermissionRequestWorkerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD18D27A2B162DB4003B8A46 /* UserAuthPermissionRequestWorkerProtocol.swift */; };
+		FD18D28B2B1DCD5D003B8A46 /* UserAuthPermissionRequestDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD18D27C2B162E62003B8A46 /* UserAuthPermissionRequestDelegate.swift */; };
+		FD18D28C2B1DCD5D003B8A46 /* SessionUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3B392D2B0A1B1000BBCF03 /* SessionUpdater.swift */; };
+		FD18D2932B1DCD7D003B8A46 /* AuthProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3B391B2B076B9E00BBCF03 /* AuthProvider.swift */; };
+		FD18D2942B1DCD7D003B8A46 /* SessionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3B39132B076B3400BBCF03 /* SessionProvider.swift */; };
+		FD18D2952B1DCD7D003B8A46 /* RequestTokenProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3B39112B076B1D00BBCF03 /* RequestTokenProvider.swift */; };
+		FD18D2962B1DCD7D003B8A46 /* AccountDetailsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3B39012B0644FE00BBCF03 /* AccountDetailsProvider.swift */; };
+		FD18D2972B1DCD7D003B8A46 /* GuestSessionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3B391D2B076D1600BBCF03 /* GuestSessionProvider.swift */; };
 		FD3B38C62B06195900BBCF03 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3B38C52B06195900BBCF03 /* AppDelegate.swift */; };
 		FD3B38C82B06195900BBCF03 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3B38C72B06195900BBCF03 /* SceneDelegate.swift */; };
 		FD3B38CF2B06195C00BBCF03 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD3B38CE2B06195C00BBCF03 /* Assets.xcassets */; };
@@ -212,7 +212,7 @@
 		FD18D1E22B1626A5003B8A46 /* CellcomHomeTaskModels.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CellcomHomeTaskModels.h; sourceTree = "<group>"; };
 		FD18D2142B16276E003B8A46 /* CellcomHometaskProtocols.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CellcomHometaskProtocols.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD18D2162B16276E003B8A46 /* CellcomHometaskProtocols.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CellcomHometaskProtocols.h; sourceTree = "<group>"; };
-		FD18D2332B1627F5003B8A46 /* DataLoadingTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataLoadingTask.swift; sourceTree = "<group>"; };
+		FD18D2332B1627F5003B8A46 /* CancelableDataLoadingTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelableDataLoadingTask.swift; sourceTree = "<group>"; };
 		FD18D27A2B162DB4003B8A46 /* UserAuthPermissionRequestWorkerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAuthPermissionRequestWorkerProtocol.swift; sourceTree = "<group>"; };
 		FD18D27C2B162E62003B8A46 /* UserAuthPermissionRequestDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAuthPermissionRequestDelegate.swift; sourceTree = "<group>"; };
 		FD18D2862B163662003B8A46 /* URLSessionDataTask+URLSessionDataTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSessionDataTask+URLSessionDataTask.swift"; sourceTree = "<group>"; };
@@ -358,6 +358,7 @@
 				FD18D2862B163662003B8A46 /* URLSessionDataTask+URLSessionDataTask.swift */,
 				FDF840152B14B96100FC2D9C /* Auth */,
 				FDF840162B14B98200FC2D9C /* AccountDetails */,
+				FD18D2882B1DCC3F003B8A46 /* Protocols */,
 				FD3B38EE2B0634CF00BBCF03 /* NetworkWorker+Extensions */,
 				FD18D1C12B162656003B8A46 /* CellcomHomtaskNetwork.h */,
 			);
@@ -396,6 +397,18 @@
 				FD18D2162B16276E003B8A46 /* CellcomHometaskProtocols.h */,
 			);
 			path = CellcomHometaskProtocols;
+			sourceTree = "<group>";
+		};
+		FD18D2882B1DCC3F003B8A46 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				FD3B39112B076B1D00BBCF03 /* RequestTokenProvider.swift */,
+				FD3B391B2B076B9E00BBCF03 /* AuthProvider.swift */,
+				FD3B39132B076B3400BBCF03 /* SessionProvider.swift */,
+				FD3B391D2B076D1600BBCF03 /* GuestSessionProvider.swift */,
+				FD3B39012B0644FE00BBCF03 /* AccountDetailsProvider.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		FD3B38B92B06195900BBCF03 = {
@@ -504,7 +517,7 @@
 				FD3B38F32B06351700BBCF03 /* CurrentlyBroadcastMoviePagesProvider.swift */,
 				FD94FAAB2B0B8302002A820F /* LowResImageProvider.swift */,
 				FD94FAA92B0B82EF002A820F /* HighResImageProvider.swift */,
-				FD18D2332B1627F5003B8A46 /* DataLoadingTask.swift */,
+				FD18D2332B1627F5003B8A46 /* CancelableDataLoadingTask.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -546,12 +559,7 @@
 		FD3B39102B076B0300BBCF03 /* Auth */ = {
 			isa = PBXGroup;
 			children = (
-				FD3B39112B076B1D00BBCF03 /* RequestTokenProvider.swift */,
-				FD3B391B2B076B9E00BBCF03 /* AuthProvider.swift */,
-				FD3B39132B076B3400BBCF03 /* SessionProvider.swift */,
-				FD3B391D2B076D1600BBCF03 /* GuestSessionProvider.swift */,
 				FD3B392D2B0A1B1000BBCF03 /* SessionUpdater.swift */,
-				FD3B39012B0644FE00BBCF03 /* AccountDetailsProvider.swift */,
 				FD3B392F2B0A3EF900BBCF03 /* AccountUpdater.swift */,
 				FD18D27A2B162DB4003B8A46 /* UserAuthPermissionRequestWorkerProtocol.swift */,
 				FD18D27C2B162E62003B8A46 /* UserAuthPermissionRequestDelegate.swift */,
@@ -867,18 +875,27 @@
 				FD18D2072B162719003B8A46 /* NetworkWorker+PopularMoviesProvider.swift in Sources */,
 				FD18D20E2B162720003B8A46 /* NetworkWorker+SessionProvider.swift in Sources */,
 				FD18D20A2B162720003B8A46 /* NetworkWorker+AccountUpdater.swift in Sources */,
+				FD18D2972B1DCD7D003B8A46 /* GuestSessionProvider.swift in Sources */,
 				FD18D2092B162720003B8A46 /* NetworkWorker+GuestSessionProvider.swift in Sources */,
 				FD18D2022B162719003B8A46 /* NetworkWorker+HighResImageProvider.swift in Sources */,
+				FD18D2962B1DCD7D003B8A46 /* AccountDetailsProvider.swift in Sources */,
 				FD18D2012B1626EC003B8A46 /* NetworkWorker.swift in Sources */,
 				FD18D2042B162719003B8A46 /* NetworkWorker+MyFavoritesMoviesProvider.swift in Sources */,
+				FD18D2942B1DCD7D003B8A46 /* SessionProvider.swift in Sources */,
 				FD18D2872B163662003B8A46 /* URLSessionDataTask+URLSessionDataTask.swift in Sources */,
+				FD18D28B2B1DCD5D003B8A46 /* UserAuthPermissionRequestDelegate.swift in Sources */,
 				FD18D2792B162A8A003B8A46 /* AuthenticationNetworkDecorator.swift in Sources */,
 				FD18D27F2B162EAE003B8A46 /* AccountDetailsProviderWorker.swift in Sources */,
+				FD18D2892B1DCD5D003B8A46 /* AccountUpdater.swift in Sources */,
 				FD18D27E2B162EA7003B8A46 /* AccountDetailsProviderNetworkDecorator.swift in Sources */,
 				FD18D20D2B162720003B8A46 /* NetworkWorker+AccountDetailsProvider.swift in Sources */,
+				FD18D2932B1DCD7D003B8A46 /* AuthProvider.swift in Sources */,
+				FD18D28C2B1DCD5D003B8A46 /* SessionUpdater.swift in Sources */,
 				FD18D20C2B162720003B8A46 /* NetworkWorker+SessionUpdater.swift in Sources */,
 				FD18D2782B162A8A003B8A46 /* AuthWorker.swift in Sources */,
+				FD18D28A2B1DCD5D003B8A46 /* UserAuthPermissionRequestWorkerProtocol.swift in Sources */,
 				FD18D2052B162719003B8A46 /* NetworkWorker+FavoriteMovieUpdater.swift in Sources */,
+				FD18D2952B1DCD7D003B8A46 /* RequestTokenProvider.swift in Sources */,
 				FD18D20B2B162720003B8A46 /* NetworkWorker+RequestTokenProvider.swift in Sources */,
 				FD18D2032B162719003B8A46 /* NetworkWorker+CurrentlyBroadcastMoviesProvider.swift in Sources */,
 				FD18D2062B162719003B8A46 /* NetworkWorker+LowResImageProvider.swift in Sources */,
@@ -920,20 +937,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FD18D2632B162907003B8A46 /* SessionUpdater.swift in Sources */,
 				FD18D2542B162901003B8A46 /* CurrentlyBroadcastMoviePagesProvider.swift in Sources */,
 				FD18D2552B162901003B8A46 /* HighResImageProvider.swift in Sources */,
-				FD18D2622B162907003B8A46 /* RequestTokenProvider.swift in Sources */,
 				FD18D2512B162901003B8A46 /* PopularMoviePagesProvider.swift in Sources */,
-				FD18D27D2B162E62003B8A46 /* UserAuthPermissionRequestDelegate.swift in Sources */,
-				FD18D2642B162907003B8A46 /* AuthProvider.swift in Sources */,
 				FD18D2522B162901003B8A46 /* LowResImageProvider.swift in Sources */,
-				FD18D2602B162907003B8A46 /* SessionProvider.swift in Sources */,
-				FD18D2562B162901003B8A46 /* DataLoadingTask.swift in Sources */,
-				FD18D2652B162907003B8A46 /* AccountUpdater.swift in Sources */,
-				FD18D27B2B162DB4003B8A46 /* UserAuthPermissionRequestWorkerProtocol.swift in Sources */,
-				FD18D2612B162907003B8A46 /* GuestSessionProvider.swift in Sources */,
-				FD18D25F2B162907003B8A46 /* AccountDetailsProvider.swift in Sources */,
+				FD18D2562B162901003B8A46 /* CancelableDataLoadingTask.swift in Sources */,
 				FD18D2532B162901003B8A46 /* FavoriteMovieUpdater.swift in Sources */,
 				FD18D2572B162901003B8A46 /* MyFavoriteMoviePagesProvider.swift in Sources */,
 			);

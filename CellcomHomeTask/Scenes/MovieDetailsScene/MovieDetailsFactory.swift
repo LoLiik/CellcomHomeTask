@@ -17,10 +17,10 @@ class MovieDetailsFactory: MovieDetailsFactoryProtocol {
     func buildMovieDetails(with movie: Movie, completion: @escaping (Bool) -> Void) -> UIViewController {
         let coordinator = MovieDetailsCoordinator()
         let networkWorker = NetworkWorker()
-        let authWorker = AuthWorker(authProvider: networkWorker, userAuthPermissionRequestWorker: coordinator, sessionUpdater: networkWorker)
+        let authWorker = AuthWorkerFactory.build(userAuthPermissionRequestWorker: coordinator, sessionUpdater: networkWorker)
         let authNetworkDecorator = AuthenticationNetworkDecorator(decoratee: networkWorker, authWorker: authWorker)
         
-        let accountDetailsProviderWorker = AccountDetailsProviderWorker(accountDetailsProvider: networkWorker, accountUpdater: networkWorker)
+        let accountDetailsProviderWorker = AccountDetailsProviderWorkerFactory.build(accountUpdater: networkWorker)
         let accountDetailsAndAuthNetworkDecorator = AccountDetailsProviderNetworkDecorator(decoratee: authNetworkDecorator, accountDetailsProvider: accountDetailsProviderWorker)
         
         let errorAlertFactory = ErrorAlertFactory()

@@ -1,10 +1,10 @@
 //
-//  DataLoadingTask.swift
+//  CancelableDataLoadingTask.swift
 //  CellcomHometaskProtocols
 //
 //  Created by Евгений Кулиничев on 28.11.2023.
 //
 
-public protocol DataLoadingTask: AnyObject {
+public protocol CancelableDataLoadingTask: AnyObject {
     func cancel()
 }

@@ -9,7 +9,8 @@ import CellcomHomeTaskModels
 import CellcomHometaskProtocols
 
 extension NetworkWorker: MyFavoriteMoviePagesProvider {
-    public func fetchFavoriteMovies(page: Int, completion: @escaping (Result<MovieList, MovieFetchingError>) -> Void) -> DataLoadingTask? {
+    @discardableResult
+    public func fetchFavoriteMovies(page: Int, completion: @escaping (Result<MovieList, MovieFetchingError>) -> Void) -> CancelableDataLoadingTask? {
         guard let sessionId = Config.sessionId else {
             completion(.failure(.authDenied))
             return nil

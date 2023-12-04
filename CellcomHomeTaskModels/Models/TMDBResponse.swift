@@ -12,6 +12,13 @@ public struct TMDBResponse: Decodable, Equatable {
     public let failure: Bool?
     public let statusCode: Int
     public let statusMessage: String
+    
+    public init(success: Bool?, failure: Bool?, statusCode: Int, statusMessage: String) {
+        self.success = success
+        self.failure = failure
+        self.statusCode = statusCode
+        self.statusMessage = statusMessage
+    }
 }
 
 extension TMDBResponse {

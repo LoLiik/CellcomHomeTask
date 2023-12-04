@@ -8,5 +8,5 @@
 import CellcomHomeTaskModels
 
 public protocol LowResImageProvider: AnyObject {
-    func fetchLowResImage(imagePath: String, completion: @escaping (Result<Data, MovieFetchingError>) -> Void) -> DataLoadingTask?
+    func fetchLowResImage(imagePath: String, completion: @escaping (Result<Data, MovieFetchingError>) -> Void) -> CancelableDataLoadingTask?
 }

@@ -8,5 +8,5 @@
 import CellcomHomeTaskModels
 
 public protocol MyFavoriteMoviePagesProvider: AnyObject {
-    func fetchFavoriteMovies(page: Int, completion: @escaping (Result<MovieList, MovieFetchingError>) -> Void) -> DataLoadingTask?
+    func fetchFavoriteMovies(page: Int, completion: @escaping (Result<MovieList, MovieFetchingError>) -> Void) -> CancelableDataLoadingTask?
 }

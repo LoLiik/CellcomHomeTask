@@ -9,7 +9,7 @@ import CellcomHomeTaskModels
 import CellcomHometaskProtocols
 
 extension NetworkWorker: RequestTokenProvider {
-    public func generateRequestToken(completion: @escaping (Result<RequestToken, MovieFetchingError>) -> Void) -> DataLoadingTask? {
+    func generateRequestToken(completion: @escaping (Result<RequestToken, MovieFetchingError>) -> Void) -> CancelableDataLoadingTask? {
         let urlPath = createUrlWithApiKey(Paths.createRequestToken)
         guard let url = urlPath.url else { return nil }
         return fetch(url: url, completion: completion)

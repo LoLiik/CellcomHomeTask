@@ -9,7 +9,7 @@ import CellcomHomeTaskModels
 import CellcomHometaskProtocols
 
 extension NetworkWorker: HighResImageProvider {
-    public func fetchHighResImage(imagePath: String, completion: @escaping (Result<Data, MovieFetchingError>) -> Void) -> DataLoadingTask? {
+    public func fetchHighResImage(imagePath: String, completion: @escaping (Result<Data, MovieFetchingError>) -> Void) -> CancelableDataLoadingTask? {
         let urlPath = "\(Paths.highResMoviePoster)\(imagePath)"
         guard let url = urlPath.url else { return nil }
         return fetchData(url: url, completion: completion)

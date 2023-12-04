@@ -8,4 +8,4 @@
 import Foundation
 import CellcomHometaskProtocols
 
-extension URLSessionDataTask: DataLoadingTask { }
+extension URLSessionDataTask: CancelableDataLoadingTask { }

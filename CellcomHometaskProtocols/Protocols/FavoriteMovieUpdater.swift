@@ -8,5 +8,5 @@
 import CellcomHomeTaskModels
 
 public protocol FavoriteMovieUpdater: AnyObject {
-    func updateFavoriteMovie(movieId: Int, isFavorite: Bool, completion: @escaping (Result<TMDBResponse, MovieFetchingError>) -> Void) -> DataLoadingTask?
+    func updateFavoriteMovie(movieId: Int, isFavorite: Bool, completion: @escaping (Result<TMDBResponse, MovieFetchingError>) -> Void) -> CancelableDataLoadingTask?
 }

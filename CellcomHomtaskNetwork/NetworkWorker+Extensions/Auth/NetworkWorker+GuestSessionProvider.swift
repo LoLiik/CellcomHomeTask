@@ -9,7 +9,7 @@ import CellcomHomeTaskModels
 import CellcomHometaskProtocols
 
 extension NetworkWorker: GuestSessionProvider {
-    public func generateGuestSession(completion: @escaping (Result<GuestSession, MovieFetchingError>) -> Void) -> DataLoadingTask? {
+    func generateGuestSession(completion: @escaping (Result<GuestSession, MovieFetchingError>) -> Void) -> CancelableDataLoadingTask? {
         let urlPath = createUrlWithApiKey(Paths.guestSession)
         guard let url = urlPath.url else { return nil }
         return fetch(url: url, completion: completion)

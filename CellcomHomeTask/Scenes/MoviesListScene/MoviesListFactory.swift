@@ -14,10 +14,10 @@ final class MoviesListFactory {
     func build() -> UIViewController {
         let coordinator = MoviesListCoordinator()
         let networkWorker = NetworkWorker()
-        let authWorker = AuthWorker(authProvider: networkWorker, userAuthPermissionRequestWorker: coordinator, sessionUpdater: networkWorker)
+        let authWorker = AuthWorkerFactory.build(userAuthPermissionRequestWorker: coordinator, sessionUpdater: networkWorker)
         let authNetworkDecorator = AuthenticationNetworkDecorator(decoratee: networkWorker, authWorker: authWorker)
         
-        let accountDetailsProviderWorker = AccountDetailsProviderWorker(accountDetailsProvider: networkWorker, accountUpdater: networkWorker)
+        let accountDetailsProviderWorker = AccountDetailsProviderWorkerFactory.build(accountUpdater: networkWorker)
         let accountDetailsAndAuthNetworkDecorator = AccountDetailsProviderNetworkDecorator(decoratee: authNetworkDecorator, accountDetailsProvider: accountDetailsProviderWorker)
         
         let popularMoviesProvider = MoviesPageWorker { page, completion in

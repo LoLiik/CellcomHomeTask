@@ -5,7 +5,7 @@
 //  Created by Евгений Кулиничев on 19.11.2023.
 //
 
-public struct MovieList: Decodable {
+public struct MovieList: Decodable, Equatable {
     public let currentPage: Int?
     public let movies: [Movie]
     public let totalPagesCount: Int

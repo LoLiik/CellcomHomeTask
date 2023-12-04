@@ -32,7 +32,7 @@ final class MoviesListViewModel: MoviesListViewModelProtocol {
     private let router: MoviesListRouterProtocol
     private var shouldDisplayEmptyStateWhileChangingType = false
     
-    private var moviesListDataLoadingTask: DataLoadingTask?
+    private var moviesListDataLoadingTask: CancelableDataLoadingTask?
     private var shouldReloadFavoriteMovies: Bool = false {
         didSet {
             if shouldReloadFavoriteMovies, currentListType == .myFavorites {

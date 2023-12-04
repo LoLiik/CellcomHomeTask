@@ -28,7 +28,7 @@ public class NetworkWorker {
 }
 
 extension NetworkWorker {
-    func fetch<T: Decodable>(url: URL, completion: @escaping (Result<T, MovieFetchingError>) -> Void) -> DataLoadingTask? {
+    func fetch<T: Decodable>(url: URL, completion: @escaping (Result<T, MovieFetchingError>) -> Void) -> CancelableDataLoadingTask? {
         let request = URLRequest(url: url)
         let dataTask = URLSession.shared.dataTask(with: request) { data, response, error in
              guard error == nil else {
@@ -75,7 +75,7 @@ extension NetworkWorker {
         return dataTask
     }
     
-    func fetchData(url: URL, completion: @escaping (Result<Data, MovieFetchingError>) -> Void) -> DataLoadingTask? {
+    func fetchData(url: URL, completion: @escaping (Result<Data, MovieFetchingError>) -> Void) -> CancelableDataLoadingTask? {
         let request = URLRequest(url: url)
         let dataTask = URLSession.shared.dataTask(with: request) { data, response, error in
             guard error == nil else {
@@ -93,7 +93,7 @@ extension NetworkWorker {
         return dataTask
     }
     
-    func post<G: Encodable, T: Decodable>(url: URL, object: G, completion: @escaping (Result<T, MovieFetchingError>) -> Void) -> DataLoadingTask? {
+    func post<G: Encodable, T: Decodable>(url: URL, object: G, completion: @escaping (Result<T, MovieFetchingError>) -> Void) -> CancelableDataLoadingTask? {
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")

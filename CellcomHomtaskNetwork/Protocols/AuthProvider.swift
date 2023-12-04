@@ -5,4 +5,4 @@
 //  Created by Евгений Кулиничев on 19.11.2023.
 //
 
-public typealias AuthProvider = SessionProvider & RequestTokenProvider
+typealias AuthProvider = SessionProvider & RequestTokenProvider

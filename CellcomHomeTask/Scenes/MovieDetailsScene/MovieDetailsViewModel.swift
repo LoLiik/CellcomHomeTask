@@ -23,8 +23,8 @@ final class MovieDetailsViewModel {
     private let router: MovieDetailsRouterProtocol
     private let updateCompletion: (Bool) -> Void
     
-    private var loadingTask: DataLoadingTask?
-    private var loadingPosterTask: DataLoadingTask?
+    private var loadingTask: CancelableDataLoadingTask?
+    private var loadingPosterTask: CancelableDataLoadingTask?
     
     var onImageFetched: ((UIImage?) -> Void)?
     var onAddedToFavorite: (() -> Void)?

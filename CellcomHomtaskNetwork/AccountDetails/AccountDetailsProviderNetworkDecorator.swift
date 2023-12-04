@@ -24,7 +24,7 @@ public final class AccountDetailsProviderNetworkDecorator<T> {
     ///   - actionForDecoration: closure that receives closure of completion
     ///   - originalCompletion: closure handling result of original action
     /// - Returns: task object for cancelation at any moment
-    private func decorate<G>(actionForDecoration: @escaping (@escaping (Result<G, MovieFetchingError>) -> Void) -> DataLoadingTask?, originalCompletion: @escaping (Result<G, MovieFetchingError>) -> Void) -> DataLoadingTask? {
+    private func decorate<G>(actionForDecoration: @escaping (@escaping (Result<G, MovieFetchingError>) -> Void) -> CancelableDataLoadingTask?, originalCompletion: @escaping (Result<G, MovieFetchingError>) -> Void) -> CancelableDataLoadingTask? {
         // 1. Creating new task wrapper to be able to cancel current task at any moment
         let updatableTask = UpdatableCancebleTaskProxy()
         // 2. Executing original action with wrapped completion and saving reference for its task to cancel
@@ -69,7 +69,7 @@ public final class AccountDetailsProviderNetworkDecorator<T> {
 }
 
 extension AccountDetailsProviderNetworkDecorator: FavoriteMovieUpdater where T: FavoriteMovieUpdater {
-    public func updateFavoriteMovie(movieId: Int, isFavorite: Bool, completion: @escaping (Result<TMDBResponse, MovieFetchingError>) -> Void) -> DataLoadingTask? {
+    public func updateFavoriteMovie(movieId: Int, isFavorite: Bool, completion: @escaping (Result<TMDBResponse, MovieFetchingError>) -> Void) -> CancelableDataLoadingTask? {
         decorate(
             actionForDecoration: { [weak self] decoratedCompletion in
                 return self?.decoratee.updateFavoriteMovie(movieId: movieId, isFavorite: isFavorite, completion: decoratedCompletion)
@@ -80,19 +80,19 @@ extension AccountDetailsProviderNetworkDecorator: FavoriteMovieUpdater where T: 
 }
 
 extension AccountDetailsProviderNetworkDecorator: PopularMoviePagesProvider where T: PopularMoviePagesProvider {
-    public func fetchPopularMovies(page: Int, completion: @escaping (Result<MovieList, MovieFetchingError>) -> Void) -> DataLoadingTask? {
+    public func fetchPopularMovies(page: Int, completion: @escaping (Result<MovieList, MovieFetchingError>) -> Void) -> CancelableDataLoadingTask? {
         return decoratee.fetchPopularMovies(page: page, completion: completion)
     }
 }
 
 extension AccountDetailsProviderNetworkDecorator: CurrentlyBroadcastMoviePagesProvider where T: CurrentlyBroadcastMoviePagesProvider {
-    public func fetchCurrentlyBroadcastMovies(page: Int, completion: @escaping (Result<MovieList, MovieFetchingError>) -> Void) -> DataLoadingTask? {
+    public func fetchCurrentlyBroadcastMovies(page: Int, completion: @escaping (Result<MovieList, MovieFetchingError>) -> Void) -> CancelableDataLoadingTask? {
         return decoratee.fetchCurrentlyBroadcastMovies(page: page, completion: completion)
     }
 }
 
 extension AccountDetailsProviderNetworkDecorator: MyFavoriteMoviePagesProvider where T: MyFavoriteMoviePagesProvider {
-    public func fetchFavoriteMovies(page: Int, completion: @escaping (Result<MovieList, MovieFetchingError>) -> Void) -> DataLoadingTask? {
+    public func fetchFavoriteMovies(page: Int, completion: @escaping (Result<MovieList, MovieFetchingError>) -> Void) -> CancelableDataLoadingTask? {
         return decorate(
             actionForDecoration: { [weak self] decoratedCompletion in
                 return self?.decoratee.fetchFavoriteMovies(page: page, completion: decoratedCompletion)

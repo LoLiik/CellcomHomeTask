@@ -6,6 +6,7 @@
 //
 
 import CellcomHomeTaskModels
+import CellcomHometaskProtocols
 
 public protocol UserAuthPermissionRequestWorkerProtocol: AnyObject {
     func requestUserAuthPermission(url: URL, completion: @escaping (Result<Void, MovieFetchingError>) -> Void )
@@ -16,5 +17,5 @@ public protocol AuthWorkerProtocol: AnyObject {
 }
 
 public protocol DataLoadingTaskUpdatable: AnyObject {
-    var currentTask: DataLoadingTask? { get set }
+    var currentTask: CancelableDataLoadingTask? { get set }
 }

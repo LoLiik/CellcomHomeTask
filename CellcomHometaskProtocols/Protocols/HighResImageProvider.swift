@@ -8,6 +8,6 @@
 import CellcomHomeTaskModels
 
 public protocol HighResImageProvider: AnyObject {
-    func fetchHighResImage(imagePath: String, completion: @escaping (Result<Data, MovieFetchingError>) -> Void) -> DataLoadingTask?
+    func fetchHighResImage(imagePath: String, completion: @escaping (Result<Data, MovieFetchingError>) -> Void) -> CancelableDataLoadingTask?
 }
 

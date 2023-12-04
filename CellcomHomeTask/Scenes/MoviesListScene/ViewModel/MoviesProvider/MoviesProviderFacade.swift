@@ -12,7 +12,7 @@ public protocol MoviesProvider: AnyObject {
     var movies: [Movie] { get }
     var haveMorePages: Bool { get }
     func resetData()
-    func fetchMovies(completion: @escaping (Result<Void, MovieFetchingError>) -> Void) -> DataLoadingTask?
+    func fetchMovies(completion: @escaping (Result<Void, MovieFetchingError>) -> Void) -> CancelableDataLoadingTask?
 }
 
 protocol MovieListTypeSelectionDelegate: AnyObject {
@@ -57,7 +57,7 @@ extension MoviesProviderFacade: MoviesProvider {
         currentMovieProvider.resetData()
     }
     
-    func fetchMovies(completion: @escaping (Result<Void, MovieFetchingError>) -> Void) -> DataLoadingTask? {
+    func fetchMovies(completion: @escaping (Result<Void, MovieFetchingError>) -> Void) -> CancelableDataLoadingTask? {
         return currentMovieProvider.fetchMovies(completion: completion)
     }
 }

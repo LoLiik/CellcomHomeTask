@@ -11,14 +11,27 @@ import CellcomHomeTaskModels
 import CellcomHometaskProtocols
 
 public class UpdatableCancebleTaskProxy {
-    public var currentTask: DataLoadingTask?
+    public var currentTask: CancelableDataLoadingTask?
 }
 
 extension UpdatableCancebleTaskProxy: DataLoadingTaskUpdatable { }
 
-extension UpdatableCancebleTaskProxy: DataLoadingTask {
+extension UpdatableCancebleTaskProxy: CancelableDataLoadingTask {
     public func cancel() {
         currentTask?.cancel()
+    }
+}
+
+public final class AuthWorkerFactory {
+    public static func build(
+        userAuthPermissionRequestWorker: UserAuthPermissionRequestWorkerProtocol,
+        sessionUpdater: SessionUpdater
+    ) -> AuthWorkerProtocol {
+        return AuthWorker(
+            authProvider: NetworkWorker(),
+            userAuthPermissionRequestWorker: userAuthPermissionRequestWorker,
+            sessionUpdater: sessionUpdater
+        )
     }
 }
 
@@ -29,7 +42,7 @@ public final class AuthWorker {
     private let userAuthPermissionRequestWorker: UserAuthPermissionRequestWorkerProtocol
     private let sessionUpdater: SessionUpdater
     
-    public init(
+    init(
         authProvider: AuthProvider,
         userAuthPermissionRequestWorker: UserAuthPermissionRequestWorkerProtocol,
         sessionUpdater: SessionUpdater

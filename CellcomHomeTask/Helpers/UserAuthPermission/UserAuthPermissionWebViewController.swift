@@ -9,6 +9,7 @@ import UIKit
 import WebKit
 import CellcomHometaskProtocols
 import CellcomHomeTaskModels
+import CellcomHomtaskNetwork
 
 final class UserAuthPermissionWebViewController: UIViewController, WKUIDelegate {
     private var webView: WKWebView?
@@ -22,6 +23,7 @@ final class UserAuthPermissionWebViewController: UIViewController, WKUIDelegate 
         super.init(nibName: nil, bundle: nil)
     }
     
+    @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

@@ -9,7 +9,8 @@ import CellcomHomeTaskModels
 import CellcomHometaskProtocols
 
 extension NetworkWorker: CurrentlyBroadcastMoviePagesProvider {
-    public func fetchCurrentlyBroadcastMovies(page: Int, completion: @escaping (Result<MovieList, MovieFetchingError>) -> Void) -> DataLoadingTask? {
+    @discardableResult
+    public func fetchCurrentlyBroadcastMovies(page: Int, completion: @escaping (Result<MovieList, MovieFetchingError>) -> Void) -> CancelableDataLoadingTask? {
         let urlPath = createUrlWithApiKey(Paths.currentlyBroadcastMoviesUrlPath).addParameter(parameterName: "page", value: page)
         guard let url = urlPath.url else { return nil }
         return fetch(url: url, completion: completion)

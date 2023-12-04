@@ -12,7 +12,7 @@ import CellcomHometaskProtocols
 final class MovieListCellViewModel {
     private let movie: Movie
     private let lowResPosterProvider: LowResImageProvider
-    private var imageLoadDataTask: DataLoadingTask?
+    private var imageLoadDataTask: CancelableDataLoadingTask?
     
     var movieName: String { movie.title }
     

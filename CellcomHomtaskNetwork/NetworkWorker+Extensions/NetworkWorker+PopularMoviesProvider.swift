@@ -9,7 +9,8 @@ import CellcomHomeTaskModels
 import CellcomHometaskProtocols
 
 extension NetworkWorker: PopularMoviePagesProvider {
-    public func fetchPopularMovies(page: Int, completion: @escaping (Result<MovieList, MovieFetchingError>) -> Void) -> DataLoadingTask? {
+    @discardableResult
+    public func fetchPopularMovies(page: Int, completion: @escaping (Result<MovieList, MovieFetchingError>) -> Void) -> CancelableDataLoadingTask? {
         let urlPath = createUrlWithApiKey(Paths.popularMovies).addParameter(parameterName: "page", value: page)
         guard let url = urlPath.url else { return nil }
         return fetch(url: url, completion: completion)

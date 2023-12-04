@@ -6,7 +6,8 @@
 //
 
 import CellcomHomeTaskModels
+import CellcomHometaskProtocols
 
 public protocol AccountDetailsProvider: AnyObject {
-    func fetchAccountDetails(completion: @escaping (Result<Account, MovieFetchingError>) -> Void) -> DataLoadingTask?
+    func fetchAccountDetails(completion: @escaping (Result<Account, MovieFetchingError>) -> Void) -> CancelableDataLoadingTask?
 }

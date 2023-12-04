@@ -8,5 +8,5 @@
 import CellcomHomeTaskModels
 
 public protocol CurrentlyBroadcastMoviePagesProvider: AnyObject {
-    func fetchCurrentlyBroadcastMovies(page: Int, completion: @escaping (Result<MovieList, MovieFetchingError>) -> Void) -> DataLoadingTask?
+    func fetchCurrentlyBroadcastMovies(page: Int, completion: @escaping (Result<MovieList, MovieFetchingError>) -> Void) -> CancelableDataLoadingTask?
 }

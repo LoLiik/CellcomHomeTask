@@ -9,7 +9,7 @@ import CellcomHomeTaskModels
 import CellcomHometaskProtocols
 
 extension NetworkWorker: SessionProvider {
-    public func generateSession(token: RequestToken, completion: @escaping (Result<Session, MovieFetchingError>) -> Void) -> DataLoadingTask? {
+    func generateSession(token: RequestToken, completion: @escaping (Result<Session, MovieFetchingError>) -> Void) -> CancelableDataLoadingTask? {
         let urlPath = createUrlWithApiKey(Paths.createSession)
         guard let url = urlPath.url else { return nil }
         return post(url: url, object: token, completion: completion)

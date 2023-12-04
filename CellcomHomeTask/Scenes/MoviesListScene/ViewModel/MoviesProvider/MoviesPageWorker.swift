@@ -9,7 +9,7 @@ import CellcomHomeTaskModels
 import CellcomHometaskProtocols
 
 class MoviesPageWorker {
-    typealias FetchMoviePageHandler = (Int, @escaping (Result<MovieList, MovieFetchingError>) -> Void) -> DataLoadingTask?
+    typealias FetchMoviePageHandler = (Int, @escaping (Result<MovieList, MovieFetchingError>) -> Void) -> CancelableDataLoadingTask?
     
     private(set) var movies: [Movie] = []
     
@@ -39,7 +39,7 @@ extension MoviesPageWorker: MoviesProvider {
         isPaginating = false
     }
     
-    func fetchMovies(completion: @escaping (Result<Void, MovieFetchingError>) -> Void) -> DataLoadingTask? {
+    func fetchMovies(completion: @escaping (Result<Void, MovieFetchingError>) -> Void) -> CancelableDataLoadingTask? {
         guard !isPaginating else { return nil }
         isPaginating = true
         return fetchMoviePage(nextPage, { [weak self] result in
