@@ -1,36 +1,270 @@
 //
-//  CellcomHomtaskNetworkTests.swift
+//  AuthenticationNetworkDecoratorTests.swift
 //  CellcomHomtaskNetworkTests
 //
 //  Created by Евгений Кулиничев on 28.11.2023.
 //
 
 import XCTest
+import CellcomHometaskProtocols
+import CellcomHomeTaskModels
 @testable import CellcomHomtaskNetwork
 
-final class CellcomHomtaskNetworkTests: XCTestCase {
-
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+final class AuthenticationNetworkDecoratorTests: XCTestCase {
+    
+    // MARK: - PopularMoviePagesProvider
+    func test_fetchPopularMovies_resultWithSuccess_proxiesCallToDecoratee() {
+        let (sut, decoratee, authWorker) = makeSUT(decoratee: PopularMoviePagesProviderMock())
+        
+        var receivedResult: Result<MovieList, MovieFetchingError>?
+        sut.fetchPopularMovies(page: 1) { result in
+            receivedResult = result
         }
+        
+        let expectedResult: Result<MovieList, MovieFetchingError> = .success(anyMovieList())
+        decoratee.providePopularMoviePagesCalls[0](expectedResult)
+        
+        XCTAssertEqual(authWorker.startAuthenticationCalls.count, 0)
+        XCTAssertEqual(decoratee.providePopularMoviePagesCalls.count, 1)
+        XCTAssertEqual(receivedResult, expectedResult)
     }
+    
+    func test_fetchPopularMovies_resultWithFailure_proxiesCallToDecoratee() {
+        let (sut, decoratee, authWorker) = makeSUT(decoratee: PopularMoviePagesProviderMock())
+        
+        var receivedResult: Result<MovieList, MovieFetchingError>?
+        sut.fetchPopularMovies(page: 1) { result in
+            receivedResult = result
+        }
+        
+        let expectedResult: Result<MovieList, MovieFetchingError> = .failure(.unknown)
+        decoratee.providePopularMoviePagesCalls[0](expectedResult)
+        
+        XCTAssertEqual(authWorker.startAuthenticationCalls.count, 0)
+        XCTAssertEqual(decoratee.providePopularMoviePagesCalls.count, 1)
+        XCTAssertEqual(receivedResult, expectedResult)
+    }
+    
+    // MARK: - PopularMoviePagesProvider
+    func test_fetchCurrentlyBroadcastMovies_resultsWithSuccess_proxiesCallToDecoratee() {
+        let (sut, decoratee, authWorker) = makeSUT(decoratee: CurrentlyBroadcastPagesProviderMock())
+        
+        var receivedResult: Result<MovieList, MovieFetchingError>?
+        sut.fetchCurrentlyBroadcastMovies(page: 1) { result in
+            receivedResult = result
+        }
+        
+        let expectedResult: Result<MovieList, MovieFetchingError> = .success(anyMovieList())
+        decoratee.provideCurrentlyBroadcastMoviePagesCalls[0](expectedResult)
+        
+        XCTAssertEqual(authWorker.startAuthenticationCalls.count, 0)
+        XCTAssertEqual(decoratee.provideCurrentlyBroadcastMoviePagesCalls.count, 1)
+        XCTAssertEqual(receivedResult, expectedResult)
+    }
+    
+    func test_fetchCurrentlyBroadcastMovies_resultsWithFailure_proxiesCallToDecoratee() {
+        let (sut, decoratee, authWorker) = makeSUT(decoratee: CurrentlyBroadcastPagesProviderMock())
+        
+        var receivedResult: Result<MovieList, MovieFetchingError>?
+        sut.fetchCurrentlyBroadcastMovies(page: 1) { result in
+            receivedResult = result
+        }
+        
+        let expectedResult: Result<MovieList, MovieFetchingError> = .failure(.unknown)
+        decoratee.provideCurrentlyBroadcastMoviePagesCalls[0](expectedResult)
+        
+        XCTAssertEqual(authWorker.startAuthenticationCalls.count, 0)
+        XCTAssertEqual(decoratee.provideCurrentlyBroadcastMoviePagesCalls.count, 1)
+        XCTAssertEqual(receivedResult, expectedResult)
+    }
+    
+    // MARK: - MyFavoriteMoviePagesProvider
+    func test_myFavoriteMoviePagesProviderDecoration_resultsWithSuccess_proxiesCallToDecoratee() {
+        let (sut, decoratee, authWorker) = makeSUT(decoratee: MyFavoriteMoviePagesProviderMock())
+        
+        var receivedResult: Result<MovieList, MovieFetchingError>?
+        sut.fetchFavoriteMovies(page: 1) { result in
+            receivedResult = result
+        }
+        
+        let expectedResult: Result<MovieList, MovieFetchingError> = .success(anyMovieList())
+        decoratee.provideMyFavoriteMoviePagesCalls[0](expectedResult)
+        
+        XCTAssertEqual(authWorker.startAuthenticationCalls.count, 0)
+        XCTAssertEqual(decoratee.provideMyFavoriteMoviePagesCalls.count, 1)
+        XCTAssertEqual(receivedResult, expectedResult)
+    }
+    
+    func test_myFavoriteMoviePagesProviderDecoration_resultsWithAuthDeniedFailure_callAuthWorker_authSuccess_repeatMovieFetch_resultWithSuccess() {
+        let (sut, decoratee, authWorker) = makeSUT(decoratee: MyFavoriteMoviePagesProviderMock())
+        
+        var receivedResult: Result<MovieList, MovieFetchingError>?
+        sut.fetchFavoriteMovies(page: 1) { receivedResult = $0 }
+        
+        decoratee.provideMyFavoriteMoviePagesCalls[0](.failure(.authDenied))
+        authWorker.startAuthenticationCalls[0](.success(()))
+        let expectedResult: Result<MovieList, MovieFetchingError> = .success(anyMovieList())
+        decoratee.provideMyFavoriteMoviePagesCalls[1](expectedResult)
+        
+        XCTAssertEqual(authWorker.startAuthenticationCalls.count, 1)
+        XCTAssertEqual(decoratee.provideMyFavoriteMoviePagesCalls.count, 2)
+        XCTAssertEqual(receivedResult, expectedResult)
+    }
+    
+    func test_myFavoriteMoviePagesProviderDecoration_resultsWithAuthDeniedFailure_callAuthWorker_authSuccess_repeatMovieFetch_resultWithFailure() {
+        let (sut, decoratee, authWorker) = makeSUT(decoratee: MyFavoriteMoviePagesProviderMock())
+        
+        var receivedResult: Result<MovieList, MovieFetchingError>?
+        sut.fetchFavoriteMovies(page: 1) { receivedResult = $0 }
+        
+        decoratee.provideMyFavoriteMoviePagesCalls[0](.failure(.authDenied))
+        authWorker.startAuthenticationCalls[0](.success(()))
+        let expectedResult: Result<MovieList, MovieFetchingError> = .failure(.unknown)
+        decoratee.provideMyFavoriteMoviePagesCalls[1](expectedResult)
+        
+        XCTAssertEqual(authWorker.startAuthenticationCalls.count, 1)
+        XCTAssertEqual(decoratee.provideMyFavoriteMoviePagesCalls.count, 2)
+        XCTAssertEqual(receivedResult, expectedResult)
+    }
+    
+    func test_myFavoriteMoviePagesProviderDecoration_resultsWithAuthDeniedFailure_callAuthWorker_authFailure_callDecorateeWithAuthDenied() {
+        let (sut, decoratee, authWorker) = makeSUT(decoratee: MyFavoriteMoviePagesProviderMock())
+        
+        var receivedResult: Result<MovieList, MovieFetchingError>?
+        sut.fetchFavoriteMovies(page: 1) { result in
+            receivedResult = result
+        }
+        
+        let authDeniedResult: Result<MovieList, MovieFetchingError> = .failure(.authDenied)
+        decoratee.provideMyFavoriteMoviePagesCalls[0](authDeniedResult)
+        
+        authWorker.startAuthenticationCalls[0](.failure(.unknown))
+        
+        XCTAssertEqual(authWorker.startAuthenticationCalls.count, 1)
+        XCTAssertEqual(decoratee.provideMyFavoriteMoviePagesCalls.count, 1)
+        XCTAssertEqual(receivedResult, .failure(.authDenied))
+    }
+    
+    // MARK: - FavoriteMovieUpdater
+    func test_favoriteMovieUpdaterDecoration_resultsWithSuccess_proxiesCallToDecoratee() {
+        let (sut, decoratee, authWorker) = makeSUT(decoratee: FavoriteMovieUpdaterMock())
+        
+        var receivedResult: Result<TMDBResponse, MovieFetchingError>?
+        sut.updateFavoriteMovie(movieId: 1, isFavorite: true) { receivedResult = $0 }
+        
+        let expectedResult: Result<TMDBResponse, MovieFetchingError> = .success(anyTMDBResponse())
+        decoratee.updateFavoriteMovieCalls[0](expectedResult)
+        
+        XCTAssertEqual(authWorker.startAuthenticationCalls.count, 0)
+        XCTAssertEqual(decoratee.updateFavoriteMovieCalls.count, 1)
+        XCTAssertEqual(receivedResult, expectedResult)
+    }
+    
+    func test_favoriteMovieUpdaterDecoration_resultsWithAuthDeniedFailure_callAuthWorker_authSuccess_repeatMovieFetch_resultWithSuccess() {
+        let (sut, decoratee, authWorker) = makeSUT(decoratee: FavoriteMovieUpdaterMock())
+        
+        var receivedResult: Result<TMDBResponse, MovieFetchingError>?
+        sut.updateFavoriteMovie(movieId: 1, isFavorite: true) { receivedResult = $0 }
+        
+        decoratee.updateFavoriteMovieCalls[0](.failure(.authDenied))
+        authWorker.startAuthenticationCalls[0](.success(()))
+        let expectedResult: Result<TMDBResponse, MovieFetchingError> = .success(anyTMDBResponse())
+        decoratee.updateFavoriteMovieCalls[1](expectedResult)
+        
+        XCTAssertEqual(authWorker.startAuthenticationCalls.count, 1)
+        XCTAssertEqual(decoratee.updateFavoriteMovieCalls.count, 2)
+        XCTAssertEqual(receivedResult, expectedResult)
+    }
+    
+    func test_favoriteMovieUpdaterDecoration_resultsWithAuthDeniedFailure_callAuthWorker_authSuccess_repeatMovieFetch_resultWithFailure() {
+        let (sut, decoratee, authWorker) = makeSUT(decoratee: FavoriteMovieUpdaterMock())
+        
+        var receivedResult: Result<TMDBResponse, MovieFetchingError>?
+        sut.updateFavoriteMovie(movieId: 1, isFavorite: true) { receivedResult = $0 }
+        
+        decoratee.updateFavoriteMovieCalls[0](.failure(.authDenied))
+        authWorker.startAuthenticationCalls[0](.success(()))
+        let expectedResult: Result<TMDBResponse, MovieFetchingError> = .failure(.unknown)
+        decoratee.updateFavoriteMovieCalls[1](expectedResult)
+        
+        XCTAssertEqual(authWorker.startAuthenticationCalls.count, 1)
+        XCTAssertEqual(decoratee.updateFavoriteMovieCalls.count, 2)
+        XCTAssertEqual(receivedResult, expectedResult)
+    }
+    
+    func test_favoriteMovieUpdaterDecoration_resultsWithAuthDeniedFailure_callAuthWorker_authFailure_callDecorateeWithAuthDenied() {
+        let (sut, decoratee, authWorker) = makeSUT(decoratee: FavoriteMovieUpdaterMock())
+        
+        var receivedResult: Result<TMDBResponse, MovieFetchingError>?
+        sut.updateFavoriteMovie(movieId: 1, isFavorite: true) { receivedResult = $0 }
+        
+        decoratee.updateFavoriteMovieCalls[0](.failure(.authDenied))
+        
+        authWorker.startAuthenticationCalls[0](.failure(.unknown))
+        
+        XCTAssertEqual(authWorker.startAuthenticationCalls.count, 1)
+        XCTAssertEqual(decoratee.updateFavoriteMovieCalls.count, 1)
+        XCTAssertEqual(receivedResult, .failure(.authDenied))
+    }
+    
+    private func makeSUT<T>(decoratee: T) -> (sut: AuthenticationNetworkDecorator<T>, decoratee: T, authWorker: AuthWorkerProtocolMock) {
+        let authWorker = AuthWorkerProtocolMock()
+        let sut = AuthenticationNetworkDecorator(
+            decoratee: decoratee,
+            authWorker: authWorker
+        )
+        
+        return (sut: sut, decoratee: decoratee, authWorker: authWorker)
+    }
+    
+    private func anyMovieList() -> MovieList {
+        return MovieList(currentPage: nil, movies: [anyMovie(), anyMovie()], totalPagesCount: 1)
+    }
+    
+    private func anyMovie() -> Movie {
+        return .init(id: 1, title: "some title", voteAverage: 0.0, releaseDate: Date(), posterPath: "", overview: "")
+    }
+    
+    private func anyTMDBResponse() -> TMDBResponse {
+        return TMDBResponse(success: nil, failure: nil, statusCode: 1, statusMessage: "some error message")
+    }
+}
 
+class PopularMoviePagesProviderMock: PopularMoviePagesProvider {
+    var providePopularMoviePagesCalls: [(Result<MovieList, MovieFetchingError>) -> Void] = []
+    func fetchPopularMovies(page: Int, completion: @escaping (Result<MovieList, MovieFetchingError>) -> Void) -> CancelableDataLoadingTask? {
+        providePopularMoviePagesCalls.append(completion)
+        return nil
+    }
+}
+
+class CurrentlyBroadcastPagesProviderMock: CurrentlyBroadcastMoviePagesProvider {
+    var provideCurrentlyBroadcastMoviePagesCalls: [(Result<MovieList, MovieFetchingError>) -> Void] = []
+    func fetchCurrentlyBroadcastMovies(page: Int, completion: @escaping (Result<MovieList, MovieFetchingError>) -> Void) -> CancelableDataLoadingTask? {
+        provideCurrentlyBroadcastMoviePagesCalls.append(completion)
+        return nil
+    }
+}
+
+class MyFavoriteMoviePagesProviderMock: MyFavoriteMoviePagesProvider {
+    var provideMyFavoriteMoviePagesCalls: [(Result<MovieList, MovieFetchingError>) -> Void] = []
+    func fetchFavoriteMovies(page: Int, completion: @escaping (Result<MovieList, MovieFetchingError>) -> Void) -> CancelableDataLoadingTask? {
+        provideMyFavoriteMoviePagesCalls.append(completion)
+        return nil
+    }
+}
+
+class AuthWorkerProtocolMock: AuthWorkerProtocol {
+    var startAuthenticationCalls: [(Result<Void, MovieFetchingError>) -> Void] = []
+    func startAuthentication(updatableTask: DataLoadingTaskUpdatable, completion: @escaping (Result<Void, MovieFetchingError>) -> Void) {
+        startAuthenticationCalls.append(completion)
+    }
+}
+
+class FavoriteMovieUpdaterMock: FavoriteMovieUpdater {
+    var updateFavoriteMovieCalls: [(Result<TMDBResponse, MovieFetchingError>) -> Void] = []
+    func updateFavoriteMovie(movieId: Int, isFavorite: Bool, completion: @escaping (Result<TMDBResponse, MovieFetchingError>) -> Void) -> CancelableDataLoadingTask? {
+        updateFavoriteMovieCalls.append(completion)
+        return nil
+    }
 }
