@@ -21,11 +21,11 @@ final class AuthenticationNetworkDecoratorTests: XCTestCase {
             receivedResult = result
         }
         
-        let expectedResult: Result<MovieList, MovieFetchingError> = .success(anyMovieList())
+        let expectedResult: Result<MovieList, MovieFetchingError> = .success(anyMovieList)
         decoratee.providePopularMoviePagesCalls[0](expectedResult)
         
-        XCTAssertEqual(authWorker.startAuthenticationCalls.count, 0)
-        XCTAssertEqual(decoratee.providePopularMoviePagesCalls.count, 1)
+        XCTAssertEqual(authWorker.startAuthenticationCalls.count, 0, "Authorizaion should not be called if initial call succeded")
+        XCTAssertEqual(decoratee.providePopularMoviePagesCalls.count, 1, "Movie fetching should be called once")
         XCTAssertEqual(receivedResult, expectedResult)
     }
     
@@ -40,8 +40,8 @@ final class AuthenticationNetworkDecoratorTests: XCTestCase {
         let expectedResult: Result<MovieList, MovieFetchingError> = .failure(.unknown)
         decoratee.providePopularMoviePagesCalls[0](expectedResult)
         
-        XCTAssertEqual(authWorker.startAuthenticationCalls.count, 0)
-        XCTAssertEqual(decoratee.providePopularMoviePagesCalls.count, 1)
+        XCTAssertEqual(authWorker.startAuthenticationCalls.count, 0, "Authorizaion should not be called if initial call failed with any error other then authDenied")
+        XCTAssertEqual(decoratee.providePopularMoviePagesCalls.count, 1, "Movie fetching should be called once")
         XCTAssertEqual(receivedResult, expectedResult)
     }
     
@@ -54,11 +54,11 @@ final class AuthenticationNetworkDecoratorTests: XCTestCase {
             receivedResult = result
         }
         
-        let expectedResult: Result<MovieList, MovieFetchingError> = .success(anyMovieList())
+        let expectedResult: Result<MovieList, MovieFetchingError> = .success(anyMovieList)
         decoratee.provideCurrentlyBroadcastMoviePagesCalls[0](expectedResult)
         
-        XCTAssertEqual(authWorker.startAuthenticationCalls.count, 0)
-        XCTAssertEqual(decoratee.provideCurrentlyBroadcastMoviePagesCalls.count, 1)
+        XCTAssertEqual(authWorker.startAuthenticationCalls.count, 0, "Authorizaion should not be called if initial call succeded")
+        XCTAssertEqual(decoratee.provideCurrentlyBroadcastMoviePagesCalls.count, 1, "Movie fetching should be called once")
         XCTAssertEqual(receivedResult, expectedResult)
     }
     
@@ -73,8 +73,8 @@ final class AuthenticationNetworkDecoratorTests: XCTestCase {
         let expectedResult: Result<MovieList, MovieFetchingError> = .failure(.unknown)
         decoratee.provideCurrentlyBroadcastMoviePagesCalls[0](expectedResult)
         
-        XCTAssertEqual(authWorker.startAuthenticationCalls.count, 0)
-        XCTAssertEqual(decoratee.provideCurrentlyBroadcastMoviePagesCalls.count, 1)
+        XCTAssertEqual(authWorker.startAuthenticationCalls.count, 0, "Authorizaion should not be called if initial call failed with any error other then authDenied")
+        XCTAssertEqual(decoratee.provideCurrentlyBroadcastMoviePagesCalls.count, 1, "Movie fetching should be called once")
         XCTAssertEqual(receivedResult, expectedResult)
     }
     
@@ -87,11 +87,11 @@ final class AuthenticationNetworkDecoratorTests: XCTestCase {
             receivedResult = result
         }
         
-        let expectedResult: Result<MovieList, MovieFetchingError> = .success(anyMovieList())
+        let expectedResult: Result<MovieList, MovieFetchingError> = .success(anyMovieList)
         decoratee.provideMyFavoriteMoviePagesCalls[0](expectedResult)
         
-        XCTAssertEqual(authWorker.startAuthenticationCalls.count, 0)
-        XCTAssertEqual(decoratee.provideMyFavoriteMoviePagesCalls.count, 1)
+        XCTAssertEqual(authWorker.startAuthenticationCalls.count, 0, "Authorizaion should not be called if initial call succeded")
+        XCTAssertEqual(decoratee.provideMyFavoriteMoviePagesCalls.count, 1, "Movie fetching should be called once")
         XCTAssertEqual(receivedResult, expectedResult)
     }
     
@@ -103,11 +103,11 @@ final class AuthenticationNetworkDecoratorTests: XCTestCase {
         
         decoratee.provideMyFavoriteMoviePagesCalls[0](.failure(.authDenied))
         authWorker.startAuthenticationCalls[0](.success(()))
-        let expectedResult: Result<MovieList, MovieFetchingError> = .success(anyMovieList())
+        let expectedResult: Result<MovieList, MovieFetchingError> = .success(anyMovieList)
         decoratee.provideMyFavoriteMoviePagesCalls[1](expectedResult)
         
-        XCTAssertEqual(authWorker.startAuthenticationCalls.count, 1)
-        XCTAssertEqual(decoratee.provideMyFavoriteMoviePagesCalls.count, 2)
+        XCTAssertEqual(authWorker.startAuthenticationCalls.count, 1, "Authorizaion should be called once when have authDenied error")
+        XCTAssertEqual(decoratee.provideMyFavoriteMoviePagesCalls.count, 2, "Movie fetching should be called twice - initially and after authorization")
         XCTAssertEqual(receivedResult, expectedResult)
     }
     
@@ -122,8 +122,8 @@ final class AuthenticationNetworkDecoratorTests: XCTestCase {
         let expectedResult: Result<MovieList, MovieFetchingError> = .failure(.unknown)
         decoratee.provideMyFavoriteMoviePagesCalls[1](expectedResult)
         
-        XCTAssertEqual(authWorker.startAuthenticationCalls.count, 1)
-        XCTAssertEqual(decoratee.provideMyFavoriteMoviePagesCalls.count, 2)
+        XCTAssertEqual(authWorker.startAuthenticationCalls.count, 1, "Authorizaion should be called once when have authDenied error")
+        XCTAssertEqual(decoratee.provideMyFavoriteMoviePagesCalls.count, 2, "Movie fetching should be called twice - initially and repeat after authorization")
         XCTAssertEqual(receivedResult, expectedResult)
     }
     
@@ -140,8 +140,8 @@ final class AuthenticationNetworkDecoratorTests: XCTestCase {
         
         authWorker.startAuthenticationCalls[0](.failure(.unknown))
         
-        XCTAssertEqual(authWorker.startAuthenticationCalls.count, 1)
-        XCTAssertEqual(decoratee.provideMyFavoriteMoviePagesCalls.count, 1)
+        XCTAssertEqual(authWorker.startAuthenticationCalls.count, 1, "Authorizaion should be called once when have authDenied error")
+        XCTAssertEqual(decoratee.provideMyFavoriteMoviePagesCalls.count, 1, "Movie fetching should be called once - no repeat if authorization failed")
         XCTAssertEqual(receivedResult, .failure(.authDenied))
     }
     
@@ -152,11 +152,11 @@ final class AuthenticationNetworkDecoratorTests: XCTestCase {
         var receivedResult: Result<TMDBResponse, MovieFetchingError>?
         sut.updateFavoriteMovie(movieId: 1, isFavorite: true) { receivedResult = $0 }
         
-        let expectedResult: Result<TMDBResponse, MovieFetchingError> = .success(anyTMDBResponse())
+        let expectedResult: Result<TMDBResponse, MovieFetchingError> = .success(anyTMDBResponse)
         decoratee.updateFavoriteMovieCalls[0](expectedResult)
         
-        XCTAssertEqual(authWorker.startAuthenticationCalls.count, 0)
-        XCTAssertEqual(decoratee.updateFavoriteMovieCalls.count, 1)
+        XCTAssertEqual(authWorker.startAuthenticationCalls.count, 0, "Authorizaion should not be called if initial call succeded")
+        XCTAssertEqual(decoratee.updateFavoriteMovieCalls.count, 1, "Movie updating should be called once")
         XCTAssertEqual(receivedResult, expectedResult)
     }
     
@@ -168,11 +168,11 @@ final class AuthenticationNetworkDecoratorTests: XCTestCase {
         
         decoratee.updateFavoriteMovieCalls[0](.failure(.authDenied))
         authWorker.startAuthenticationCalls[0](.success(()))
-        let expectedResult: Result<TMDBResponse, MovieFetchingError> = .success(anyTMDBResponse())
+        let expectedResult: Result<TMDBResponse, MovieFetchingError> = .success(anyTMDBResponse)
         decoratee.updateFavoriteMovieCalls[1](expectedResult)
         
-        XCTAssertEqual(authWorker.startAuthenticationCalls.count, 1)
-        XCTAssertEqual(decoratee.updateFavoriteMovieCalls.count, 2)
+        XCTAssertEqual(authWorker.startAuthenticationCalls.count, 1, "Authorizaion should be called once when have authDenied error")
+        XCTAssertEqual(decoratee.updateFavoriteMovieCalls.count, 2, "Movie updating should be called twice - initially and repeat after authorization")
         XCTAssertEqual(receivedResult, expectedResult)
     }
     
@@ -187,8 +187,8 @@ final class AuthenticationNetworkDecoratorTests: XCTestCase {
         let expectedResult: Result<TMDBResponse, MovieFetchingError> = .failure(.unknown)
         decoratee.updateFavoriteMovieCalls[1](expectedResult)
         
-        XCTAssertEqual(authWorker.startAuthenticationCalls.count, 1)
-        XCTAssertEqual(decoratee.updateFavoriteMovieCalls.count, 2)
+        XCTAssertEqual(authWorker.startAuthenticationCalls.count, 1, "Authorizaion should be called once when have authDenied error")
+        XCTAssertEqual(decoratee.updateFavoriteMovieCalls.count, 2, "Movie updating should be called twice - initially and repeat after authorization")
         XCTAssertEqual(receivedResult, expectedResult)
     }
     
@@ -202,31 +202,44 @@ final class AuthenticationNetworkDecoratorTests: XCTestCase {
         
         authWorker.startAuthenticationCalls[0](.failure(.unknown))
         
-        XCTAssertEqual(authWorker.startAuthenticationCalls.count, 1)
-        XCTAssertEqual(decoratee.updateFavoriteMovieCalls.count, 1)
+        XCTAssertEqual(authWorker.startAuthenticationCalls.count, 1, "Authorizaion should be called once when have authDenied error")
+        XCTAssertEqual(decoratee.updateFavoriteMovieCalls.count, 1, "Movie updating should be called once - no repeat if authorization failed")
         XCTAssertEqual(receivedResult, .failure(.authDenied))
     }
     
-    private func makeSUT<T>(decoratee: T) -> (sut: AuthenticationNetworkDecorator<T>, decoratee: T, authWorker: AuthWorkerProtocolMock) {
+    private func makeSUT<T>(decoratee: T, file: StaticString = #filePath, line: UInt = #line) -> (sut: AuthenticationNetworkDecorator<T>, decoratee: T, authWorker: AuthWorkerProtocolMock) {
         let authWorker = AuthWorkerProtocolMock()
         let sut = AuthenticationNetworkDecorator(
             decoratee: decoratee,
             authWorker: authWorker
         )
+        checkForMemoryLeak(authWorker, file: file, line: line)
+        checkForMemoryLeak(decoratee as AnyObject, file: file, line: line)
+        checkForMemoryLeak(sut, file: file, line: line)
         
         return (sut: sut, decoratee: decoratee, authWorker: authWorker)
     }
     
-    private func anyMovieList() -> MovieList {
-        return MovieList(currentPage: nil, movies: [anyMovie(), anyMovie()], totalPagesCount: 1)
+    private func checkForMemoryLeak(_ object: AnyObject, file: StaticString = #filePath, line: UInt = #line) {
+        addTeardownBlock { [weak object] in
+            XCTAssertNil(object, "Instance should have been deallocated. Potential memory leak.", file: file, line: line)
+        }
     }
     
-    private func anyMovie() -> Movie {
-        return .init(id: 1, title: "some title", voteAverage: 0.0, releaseDate: Date(), posterPath: "", overview: "")
+    private var anyMovieList: MovieList {
+        .init(currentPage: nil, movies: [anyMovie, anyMovie], totalPagesCount: 1)
     }
     
-    private func anyTMDBResponse() -> TMDBResponse {
-        return TMDBResponse(success: nil, failure: nil, statusCode: 1, statusMessage: "some error message")
+    private var anyMovie: Movie {
+        .init(id: 1, title: "some title", voteAverage: 0.0, releaseDateString: "", posterPath: "", overview: "")
+    }
+    
+    private var anyFetchingErrorExceptAuthError: MovieFetchingError {
+        .unknown
+    }
+    
+    private var anyTMDBResponse: TMDBResponse {
+        .init(success: nil, failure: nil, statusCode: 1, statusMessage: "some error message")
     }
 }
 
