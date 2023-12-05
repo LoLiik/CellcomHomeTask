@@ -9,16 +9,13 @@ import CellcomHometaskModels
 import CellcomHometaskProtocols
 import Foundation
 
-struct WrapperId {
-    let page: Int
-    var movies: [Movie]
-}
-
 public final class MoviesAllPagesProvider {
-    private let networkWorker: MyFavoriteMoviePagesProvider
+    public typealias FetchMoviePageHandler = (Int, @escaping (Result<MovieList, MovieFetchingError>) -> Void) -> CancelableDataLoadingTask?
     
-    public init(networkWorker: MyFavoriteMoviePagesProvider) {
-        self.networkWorker = networkWorker
+    private let fetchMoviePage: FetchMoviePageHandler
+    
+    public init(fetchMoviePage: @escaping FetchMoviePageHandler) {
+        self.fetchMoviePage = fetchMoviePage
     }
     
     public func fetchAllMoviesWithoutOrder(completion: @escaping (Result<[Movie], MovieFetchingError>) -> Void) {
@@ -26,10 +23,15 @@ public final class MoviesAllPagesProvider {
     }
     
     private func initialFetch(completion: @escaping (Result<[Movie], MovieFetchingError>) -> Void) {
-        _ = networkWorker.fetchFavoriteMovies(page: 1) { [weak self] result in
+        _ = fetchMoviePage(1) { [weak self] result in
             switch result {
             case let .success(movieList):
-                self?.gettingAllOtherMoviesInParallel(firstMovies: movieList.movies, numberOfPages: movieList.totalPagesCount, completion: completion)
+                let firstMovies = movieList.movies ?? []
+                if movieList.totalPagesCount > 1 {
+                    self?.gettingAllOtherMoviesInParallel(firstMovies: firstMovies, numberOfPages: movieList.totalPagesCount, completion: completion)
+                } else {
+                    completion(.success(firstMovies))
+                }
             case let .failure(error):
                 completion(.failure(error))
             }
@@ -46,7 +48,7 @@ public final class MoviesAllPagesProvider {
                                 : 500
         for page in 2...numberOfPages {
             dispatchGroup.enter()
-            _ = networkWorker.fetchFavoriteMovies(page: page) { result in
+            _ = fetchMoviePage(page) { result in
                 defer { dispatchGroup.leave() }
                 switch result {
                 case let .success(movieList):
@@ -68,19 +70,14 @@ public final class MoviesAllPagesProvider {
     }
     
     private func resultProcessing(moviesByPages: [Int:[Movie]], errors: [MovieFetchingError], completion: (Result<[Movie], MovieFetchingError>) -> Void) {
-        if !errors.isEmpty {
-            for error in errors  {
-                print("error: \(error)")
-                completion(.failure(error))
-            }
-            print("ERRORS COUNT: \(errors.count)")
-        } else {
+        if !moviesByPages.isEmpty {
             let sortedMovies = moviesByPages.sorted {
                 $0.key < $1.key
             }
             let movies = sortedMovies.flatMap { $0.value }
-            print("movie count: \(movies.count)")
             completion(.success(movies))
+        } else if !errors.isEmpty {
+            completion(.failure(errors[0]))
         }
     }
 }
