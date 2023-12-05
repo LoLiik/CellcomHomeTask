@@ -10,7 +10,7 @@ extension Movie {
         case id
         case title
         case voteAverage = "vote_average"
-        case releaseDate = "release_date"
+        case releaseDateString = "release_date"
         case posterPath = "poster_path"
         case overview
     }

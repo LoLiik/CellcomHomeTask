@@ -66,7 +66,11 @@ extension NetworkWorker {
             } catch let decodingError as DecodingError {
                 print(url.absoluteString)
                 print(decodingError)
-                completion(.failure(.decodingError))
+                if let TMDBResponse = try? decoder.decode(TMDBResponse.self, from: data) {
+                    completion(.failure(.tmdbError(TMDBResponse)))
+                } else {
+                    completion(.failure(.decodingError))
+                }
             } catch {
                 completion(.failure(.unknown))
             }

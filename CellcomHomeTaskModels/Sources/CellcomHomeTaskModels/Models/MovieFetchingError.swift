@@ -13,4 +13,5 @@ public enum MovieFetchingError: Error, Equatable {
     case decodingError
     case noAccountId
     case unknown
+    case tmdbError(TMDBResponse)
 }

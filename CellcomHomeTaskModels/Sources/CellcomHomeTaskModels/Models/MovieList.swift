@@ -7,7 +7,7 @@
 
 public struct MovieList: Decodable, Equatable {
     public let currentPage: Int?
-    public let movies: [Movie]
+    public let movies: [Movie]?
     public let totalPagesCount: Int
     
     public init(currentPage: Int?, movies: [Movie], totalPagesCount: Int) {
