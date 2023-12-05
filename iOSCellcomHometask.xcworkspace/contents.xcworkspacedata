@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:iOSCellcomHomeTask.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:CellcomHometaskModels">
    </FileRef>
    <FileRef
@@ -9,8 +12,5 @@
    </FileRef>
    <FileRef
       location = "group:CellcomHometaskProtocols">
-   </FileRef>
-   <FileRef
-      location = "group:/Users/lol_ik/Projects/CellcomHomeTask/iOSCellcomHomeTask.xcodeproj">
    </FileRef>
 </Workspace>
